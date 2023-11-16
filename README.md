@@ -24,7 +24,7 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 
 ## User View Wireframes
 ### Home Screen
-![Home Screen](./public/lessonloomwireframecoursescreen.png)
+![Home Screen](./public/lessonloomwireframehomescreen.png)
 ### Course Screen
 ![Course Screen](./public/lessonloomwireframecoursescreen.png)
 ### Instructor Screen
