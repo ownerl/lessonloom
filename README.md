@@ -26,12 +26,13 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 
 ## User Stories
 - As a student, I want to view and learn from a course on a topic of my interest.
-- As an educator, I want to create a lesson for my students to cohesively view and study. 
-- As a content creator, I want to export my educational videos to LessonLoom to bring more traffic to my videos.
+- As an educator, I want to create a lesson plan for my students to cohesively view and study. 
+- As a content creator, I want to relay my educational videos to LessonLoom to bring additional traffic to my videos.
 
-## ERDs
-
+## ERD
+![ERD Chart](./public/lessonloomerd.png)
 ## RESTful Routing
+![RESTful Routing Chart](./public/lessonloomrestfulrouting.png)
 
 ## MVP
 ### To reach the minimum viable product, users must be able to:
@@ -53,6 +54,6 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 - Assign keywords to their created courses
 - Course searching by keyword
 ##
-Abay Rysbek: https://github.com/ownerl
-Morgan Selbekk: https://github.com/mselbekk11
+Abay Rysbek: https://github.com/ownerl \
+Morgan Selbekk: https://github.com/mselbekk11 \
 Carl Damey: https://github.com/carldamey
