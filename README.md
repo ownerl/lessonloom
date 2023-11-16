@@ -23,15 +23,23 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 - LucidApp: https://lucid.app/
 
 ## User View Wireframes
+### Home Screen
+![Home Screen](./public/lessonloomwireframecoursescreen.png)
+### Course Screen
+![Course Screen](./public/lessonloomwireframecoursescreen.png)
+### Instructor Screen
+![Instructor Screen](./public/lessonloomwireframeinstructorscreen.png)
+### Profile Screen
+![Profile Screen](./public/lessonloomwireframeprofilescreen.png)
 
 ## User Stories
 - As a student, I want to view and learn from a course on a topic of my interest.
 - As an educator, I want to create a lesson plan for my students to cohesively view and study. 
 - As a content creator, I want to relay my educational videos to LessonLoom to bring additional traffic to my videos.
 
-## ERD
+## ERD Chart:
 ![ERD Chart](./public/lessonloomerd.png)
-## RESTful Routing
+## RESTful Routing Chart:
 ![RESTful Routing Chart](./public/lessonloomrestfulrouting.png)
 
 ## MVP
