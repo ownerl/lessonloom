@@ -9,3 +9,5 @@ const categorySchema = new Schema({
         ref: 'Course'
     }]
 })
+
+module.exports = mongoose.model("Category", categorySchema);
