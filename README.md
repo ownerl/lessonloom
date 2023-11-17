@@ -23,36 +23,62 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 - LucidApp: https://lucid.app/
 
 ## User View Wireframes
+### Home Screen:
+![Home Screen](./public/lessonloomwireframehomescreen.png)
+### Course Screen:
+![Course Screen](./public/lessonloomwireframecoursescreen.png)
+### Instructor Screen:
+![Instructor Screen](./public/lessonloomwireframeinstructorscreen.png)
+### Profile Screen:
+![Profile Screen](./public/lessonloomwireframeprofilescreen.png)
 
-## User Stories
+## User Stories:
 - As a student, I want to view and learn from a course on a topic of my interest.
-- As an educator, I want to create a lesson for my students to cohesively view and study. 
-- As a content creator, I want to export my educational videos to LessonLoom to bring more traffic to my videos.
+- As a student, I want to be able to view courses via category
+- As a student, I want to be able to see a progress bar on each course showing how much I have completed.
+- As a student, I want to save courses I have completed to my profile along with saving other courses for later.
+- As an educator, I want to create a lesson plan for my students to cohesively view and study.
+- As an educator, I want to be able to add categories to my courses so it can appear in searches.
+- As an educator, I want to be able to add YouTube videos and thumbnails of my choosing.
+- As an educator, I want to create a lesson plan which include quizzes and questions based on the topics of the video.
+- As an educator, I want to be able to edit and delete any courses I have created
+- As a content creator, I want to relay my educational videos to LessonLoom to bring additional traffic to my videos.
 
-## ERDs
-
-## RESTful Routing
+## ERD Chart:
+![ERD Chart](./public/lessonloomerd.png)
+## RESTful Routing Chart:
+![RESTful Routing Chart](./public/lessonloomrestfulrouting.png)
 
 ## MVP
-### To reach the minimum viable product, users must be able to:
-- Authenticate via OAuth
-- Create Courses with title, description, videos, and thumbnail
-- Edit and delete their previously created courses
-- View courses
+### To reach the minimum viable product, the project will:
+- Authenticate and create accounts with Google accounts via OAuth
+- Render login prompt screen if a user isn't logged in when attempting to use account-based features
+- Embed a YouTube Iframe in the lesson screen
+- Render upload screen with titles, links, descriptions, and thumbnail settings
+- Render edit screen to change the aforementioned features in a user's course
+- Connect to and update database with all of the app's entities
+- Allow deletion of a user's own course
+- Render home page with a list of courses to view
+- Implement proper routing for courses and lessons
+- Render a course page, where lessons can be selected and viewed
+- Render a page for an individual lesson being viewed
 
-## Stretch Goals
+
+## Stretch Goals:
+- Non-Google OAuth authentication
+- Non-OAuth authentication
 - User Profile Page
-- Separate Student and Instructor accounts and views
+- User Profile Picture Upload
 - Visualize Course Progress
-- Add Lesson Tasks (annotations, quizzes)
-- User & Instructor profile pages
-- Course Rating System
+- Add Lesson Tasks (annotations, quizzes, notes)
 - Newsfeed / Trending Courses
 - Course Favoriting
 - Course completion stats
-- Assign keywords to their created courses
-- Course searching by keyword
+- Assign tags a user's created courses
+- Course filtering by tag
+- Course length signifiers
+- Course user rating system 
 ##
-Abay Rysbek: https://github.com/ownerl
-Morgan Selbekk: https://github.com/mselbekk11
+Abay Rysbek: https://github.com/ownerl \
+Morgan Selbekk: https://github.com/mselbekk11 \
 Carl Damey: https://github.com/carldamey
