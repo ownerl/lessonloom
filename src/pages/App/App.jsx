@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
-import NavBar from '../../Nav/NavBar';
+import NavBar from '../../components/Nav/NavBar';
 import AuthPage from '../Auth/AuthPage';
 import CoursesIndexPage from '../CoursesIndex/CoursesIndexPage';
 import CoursePage from '../CoursePage/CoursePage'
