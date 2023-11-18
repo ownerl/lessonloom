@@ -24,6 +24,7 @@ export default function App() {
             <Route path="/user" element={ <UserProfilePage /> }/>
             <Route path="/user/favorites" element={ <UserFavoritesPage /> }/>
             <Route path="/courses/create" element={ <CreateCoursePage /> }/>
+            <Route path="/courses" element={ <CoursesIndexPage />}/>
             <Route path="/courses/:id" element={ <CoursePage /> }/>
             <Route path="/courses/:id/:id" element={ <LessonPage /> }/>
           </Routes>
