@@ -1,13 +1,34 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require('../../controllers/api/users');
-const ensureLoggedIn = require('../../config/ensureLoggedIn');
+const passport = require('passport');
 
-// GET /api/users/check-token
-router.get('/check-token', usersController.checkToken);
-// POST /api/users
-router.post('/signup', usersController.create);
-// POST /api/users/login
-router.post('/login', usersController.login);
+router.get("/login/success", (req,res) => {
+    if (req.user) {
+        res.status(200).json({
+            sucess: true,
+            message: "successful",
+            user: req.user,
+            cookies: req.cookies
+        })
+    }
+})
 
+router.get("/login/failed", (req,res) => {
+    res.status(401).json({
+        sucess: false,
+        message: "failure",
+    })
+})
+
+router.get("/logout", (req,res) => {
+    req.logout();
+    res.redirect("http://localhost:3000/")
+})
+
+router.get("/google", passport.authenticate("google", { scope: ["profile"]}));
+
+router.get("/google/callback", passport.authenticate("google", {
+    successRedirect: "http://localhost:3000/",
+    failureRedirect: "/login/failed"
+}))
 module.exports = router;
