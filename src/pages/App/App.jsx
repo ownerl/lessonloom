@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import "./App.css";
+import { jwtDecode } from "jwt-decode";
 import NavBar from "../../components/Nav/NavBar";
 import AuthPage from "../Auth/AuthPage";
 import CoursesIndexPage from "../CoursesIndex/CoursesIndexPage";
@@ -16,6 +16,8 @@ export default function App() {
     const google = window.google;
     function handleCallbackResponse(response) {
         console.log("encoded jwt id token: ", response.credential);
+        const userObject = jwtDecode(response.credential)
+        console.log(userObject)
     }
 
     useEffect(() => {
