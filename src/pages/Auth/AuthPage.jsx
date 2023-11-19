@@ -1,4 +1,4 @@
-import LoginForm from "../../components/Login/LoginForm";
+import LoginForm from "../../components/Login/Login";
 import SignUpForm from "../../components/SignUp/SignUpForm";
 
 export default function AuthPage({ setUser }) {
