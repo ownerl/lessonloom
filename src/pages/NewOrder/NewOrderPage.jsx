@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import YouTube from 'react-youtube';
 
-export default function LessonPage() {
+export default function NewOrderPage() {
     const [videoUrl, setVideoUrl] = useState("");
     const [isPlaying, setIsPlaying] = useState(true)
     const playerRef = useRef(null);
