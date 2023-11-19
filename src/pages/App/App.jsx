@@ -27,8 +27,7 @@ export default function App() {
             process.env.REACT_APP_GOOGLE_CLIENT_ID
         );
         google.accounts.id.initialize({
-            client_Id:
-                "522192420042-ngqg9c7p78g97b1nv8lffoud4ikee7ms.apps.googleusercontent.com",
+            client_Id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
             callback: handleCallbackResponse,
         });
 
