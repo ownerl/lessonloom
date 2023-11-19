@@ -9,6 +9,7 @@ import LessonPage from '../LessonPage/LessonPage'
 import CreateCoursePage from '../CreateCoursePage/CreateCoursePage';
 import UserProfilePage from '../UserProfilePage/UserProfilePage'
 import UserFavoritesPage from '../UserFavoritesPage/UserFavoritesPage';
+/*global google*/
 
 export default function App() {
     const [user, setUser] = useState(null);
@@ -21,12 +22,13 @@ export default function App() {
         // global google object coming from script tag in public index html
         console.log('google client id: ',process.env.REACT_APP_GOOGLE_CLIENT_ID)
         google.accounts.id.initialize({
-            client_Id:process.env.REACT_APP_GOOGLE_CLIENT_ID,
-            callback:handleCallbackResponse
+            client_Id: "522192420042-ngqg9c7p78g97b1nv8lffoud4ikee7ms.apps.googleusercontent.com",
+            callback: handleCallbackResponse
         });
 
-        google.accounts.id.renderButton(document.getElementById("signInDiv"),
-        { theme: "outline", size: "large"}
+        google.accounts.id.renderButton(
+            document.getElementById("signInDiv"),
+            { theme: "outline", size: "large" }  // customization attributes
         );
     }, [])
 
