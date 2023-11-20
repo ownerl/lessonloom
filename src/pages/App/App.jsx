@@ -8,14 +8,15 @@ import LessonPage from "../LessonPage/LessonPage";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
+import './App.css'
 /*global google*/
 
 export default function App() {
     const [user, setUser] = useState(null);
-    const name = user ? user.name : 'Guest';
+    // const name = user ? user.name : 'Guest';
     return (
-        <main className="App">
-            <h1>Hello {name}</h1>
+        <div className="App">
+            {/* <h1>Hello {name}</h1> */}
             <NavBar user={user} setUser={setUser} />
             {
                 user ? (
@@ -58,6 +59,6 @@ export default function App() {
                 )
                 // <AuthPage setUser={setUser}/>
             }
-        </main>
+        </div>
     );
 }
