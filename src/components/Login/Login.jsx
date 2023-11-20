@@ -13,7 +13,9 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
             name: userObject.name,
             email: userObject.email,
             picture: userObject.picture,
+            googleId: userObject.sub,
         };
+        console.log(newUser.googleId)
         setUser(newUser);
         setShowNav(true);
     }

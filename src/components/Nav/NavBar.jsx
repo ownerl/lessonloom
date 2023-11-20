@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import * as userService from '../../utilities/users-service';
 import Login from '../Login/Login';
 import { useState } from 'react';
 import "./NavBar.css";
