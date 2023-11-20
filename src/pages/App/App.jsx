@@ -43,16 +43,17 @@ export default function App() {
                                 path="/courses/:id/:id"
                                 element={<LessonPage />}
                                 />
-                        </Routes>
-                    </>
-                ) : (
-                    <>
-                        <Routes>
                             <Route
                                 path="/courses/create"
                                 element={<CreateCoursePage />}
                             />
                         </Routes>
+                    </>
+                ) : (
+                    <>
+                        
+                    <h1>Please log in yo!</h1>
+                        
                     </>
                 )
                 // <AuthPage setUser={setUser}/>
