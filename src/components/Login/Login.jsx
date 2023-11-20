@@ -22,7 +22,7 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
 
     useEffect(() => {
         // global google object coming from script tag in public index html
-        google.accounts.id.initialize({
+            google.accounts.id.initialize({
             client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
             ux_mode: "popup",
             callback: handleCallbackResponse,

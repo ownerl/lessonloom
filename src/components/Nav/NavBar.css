@@ -1,5 +1,39 @@
 nav {
+    width: 100vw;
+    height: 10vh;
+    background: #000;
+    color: #fff;
+    padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-item:not(:first-of-type) {
+    margin-left: 1.5em;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.googleSignOutLabel {
+    margin: 0;
+    padding: 9px;
+    background-color: white;
+    border: solid 2px #2670e7;
+    border-radius: 4px;
+    transition: 0.2s ;
+}
+
+.googleSignOutLabel:hover {
+    cursor:pointer;
+    border: solid 2px #5a96f7;
 }
