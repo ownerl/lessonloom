@@ -1,7 +1,6 @@
+import { useRef, useState } from "react";
+import YouTube from 'react-youtube';
+
 export default function LessonPage() {
-    return (
-        <>
-        <h1>Lesson Page</h1>
-        </>
-    )
+    
 }
