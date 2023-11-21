@@ -13,6 +13,7 @@ export default function NavBar({user, setUser}) {
                     <li className='nav-item'><Link to="/courses/create">Create a Course</Link></li>
                     <li className='nav-item'><Link to="/user">My Profile</Link></li>
                     <li className='nav-item'><Link to="/courses/test">Course</Link></li>
+                    <li className='nav-item'><Link to="/user/favorites">test</Link></li>
                     <li className='nav-item'><Login showNav={showNav} setShowNav={setShowNav} use={user} setUser={setUser}/></li>
                 </ul>
         </nav>
