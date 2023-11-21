@@ -39,6 +39,10 @@ const courseSchema = new Schema(
     }
 )
 
+courseSchema.methods.getCourse = async function (courseId) {
+    const course = this.findById(courseId);
+}
+
 module.exports = {
     CourseModel: mongoose.model('Course', courseSchema),
     LessonModel: mongoose.model('Lesson', lessonSchema)

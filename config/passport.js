@@ -24,7 +24,7 @@ passport.use(
             // We have a new user via OAuth!
             user = await User.create({
                 name: profile.displayName,
-                googleId: profile.id,
+                googleId: profile.googleId,
                 email: profile.emails[0].value,
                 avatar: profile.photos[0].value,
             });
