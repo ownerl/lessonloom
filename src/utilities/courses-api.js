@@ -7,7 +7,11 @@ export function getCourse(courseId) {
   return sendRequest(`${BASE_URL}/${courseId}`);
 }
 
-// Add an item to the cart
+export function createCourse(courseInfo) {
+  return sendRequest(`${BASE_URL}/new`, 'POST', courseInfo);
+}
+
+// // Add an item to the cart
 // export function addLessontToCourse(itemId) {
 //   // Just send itemId for best security (no pricing)
 //   return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST');

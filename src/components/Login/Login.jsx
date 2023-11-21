@@ -17,6 +17,7 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
         };
         console.log(newUser.googleId)
         setUser(newUser);
+        localStorage.setItem('token', response.credential);
         setShowNav(true);
     }
 
@@ -44,6 +45,7 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
     function onSignOut() {
         setUser(null);
         setShowNav(false);
+        localStorage.removeItem('token');
         google.accounts.id.disableAutoSelect();
     }
 

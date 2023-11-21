@@ -1,64 +1,53 @@
 import { useRef, useState } from "react";
-import YouTube from 'react-youtube';
+import * as course from "../../utilities/courses-api";
 
 export default function CreateCoursePage() {
-    const [videoUrl, setVideoUrl] = useState("");
-    const [isPlaying, setIsPlaying] = useState(true)
-    const playerRef = useRef(null);
+    const [courseInfo, setCourseInfo] = useState({
+        title: "",
+        description: "",
+    });
+    const [error, setError] = useState("");
 
-    let videoCode;
-    try {
-        if (videoUrl) {
-            videoCode = videoUrl.split("v=")[1].split("&")[0];
-        }
-    } catch (err) {
-        console.log(err)
+    function handleChange(evt) {
+        setCourseInfo({ ...courseInfo, [evt.target.name]: evt.target.value });
+        setError("");
     }
-    const opts = {
-        height: "400",
-        width: "640",
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 0,
-        },
-    };
 
-    const togglePlayPause = () => {
-        if (playerRef.current) {
-            isPlaying ? playerRef.current.pauseVideo() : playerRef.current.playVideo();
-            setIsPlaying(!isPlaying);
+    async function handleSubmit(evt) {
+        evt.preventDefault();
+        try {
+            course.createCourse(courseInfo)
+        } catch {
+            setError('Failed To Create Course')
         }
     }
-
-    function testFunction() {
-        console.log('pause func works')
-    }
-
-
     return (
         <main>
-            <h1>NewOrderPage</h1>
-            <p>https://www.youtube.com/watch?v=kkSf95iI984</p>
-            <p>https://www.youtube.com/watch?v=PkkFHO0kxPw</p>
-            <p>https://www.youtube.com/embed/PkkFHO0kxPw?si=pXBsZqgSDhpuJMbz</p>
-            { videoCode ? <YouTube 
-                videoId={videoCode} 
-                opts={opts}
-                onPause={() => console.log('Paused!')}
-                onPlay={() => console.log('Playing!')}
-                onReady={(e) => playerRef.current = e.target}
-                />
-                :
-                <div></div>
-            }
+            <h1>TESTING: adding course to database here</h1>
+            <br />
+
             <div className="form-container">
-                <label>YouTube Link</label>
-                <input
-                    value={videoUrl}
-                    onChange={(e) => setVideoUrl(e.target.value)}
-                />
-                <button onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
+                <form autoComplete="off" onSubmit={handleSubmit}>
+                    <label>Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        value={courseInfo.title}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label>Description</label>
+                    <input
+                        type="description"
+                        name="description"
+                        value={courseInfo.description}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit">Create Course</button>
+                </form>
             </div>
+            <p className="error-message">&nbsp;{error}</p>
         </main>
     );
 }
