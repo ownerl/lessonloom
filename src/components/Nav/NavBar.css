@@ -22,18 +22,27 @@ nav {
 .nav-item a {
     color: #fff;
     text-decoration: none;
+    font-weight: 700;
 }
 
-.googleSignOutLabel {
+nav h2 a {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+#signOutDiv  {
     margin: 0;
     padding: 9px;
     background-color: white;
-    border: solid 2px #2670e7;
+    border: solid 2px #fff;
     border-radius: 4px;
-    transition: 0.2s ;
+    transition: 0.2s;
+    font-weight: 700;
 }
 
-.googleSignOutLabel:hover {
+#signOutDiv:hover {
     cursor:pointer;
     border: solid 2px #5a96f7;
 }

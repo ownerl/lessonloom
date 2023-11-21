@@ -16,8 +16,8 @@ export default function LessonSetUp() {
         console.log(err)
     }
     const opts = {
-        height: "400",
-        width: "640",
+        height: "230",
+        width: "487",
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 0,
@@ -57,15 +57,15 @@ export default function LessonSetUp() {
             }
           </div>
           <div className="form-container">
-                <label>YouTube Link</label>
-                <p>https://www.youtube.com/watch?v=kkSf95iI984</p>
+                {/* <label>YouTube Link</label>
+                <p>https://www.youtube.com/watch?v=kkSf95iI984</p> */}
                 <input
                     className="url"
                     placeholder="https://www.youtube.com/watch?v=kkSf95iI984"
                     value={videoUrl}
                     onChange={(evt) => setVideoUrl(evt.target.value)}
                 />
-                <button onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
+                <button className="youtube-btn" onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
             </div>
           {/* <input type="text" className="url" placeholder="Insert Youtube URL"/> */}
         </div>

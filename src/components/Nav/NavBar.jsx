@@ -7,7 +7,7 @@ export default function NavBar({user, setUser}) {
     const [ showNav, setShowNav ] = useState(false)
     return (
         <nav>
-                <h2>LessonLoom</h2>
+                <h2><Link to="/courses">LessonLoom</Link></h2>
                 <ul className='nav-links'>
                     <li className='nav-item'><Link to="/courses">All Courses</Link></li>
                     <li className='nav-item'><Link to="/courses/create">Create a Course</Link></li>
