@@ -12,7 +12,10 @@ const lessonSchema = new Schema({
     },
     youTubeLink: String,
     task: {
-
+        type: String
+    },
+    notes: {
+        type: String
     },
     courseId: {
         type: Schema.Types.ObjectId,

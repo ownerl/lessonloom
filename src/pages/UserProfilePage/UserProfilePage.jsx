@@ -14,7 +14,7 @@ export default function UserProfilePage({user}) {
 
     return (
         <div className="user-container">
-            <div class="photo-container">
+            <div className="photo-container">
             <img className="profile-photo" src={user.picture} alt='profile-pic'referrerpolicy="no-referrer"/>
             </div>
             <h3>{user.name}</h3>
