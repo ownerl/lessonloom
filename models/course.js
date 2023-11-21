@@ -41,6 +41,7 @@ const courseSchema = new Schema(
 
 courseSchema.methods.getCourse = async function (courseId) {
     const course = this.findById(courseId);
+    return course;
 }
 
 module.exports = {
