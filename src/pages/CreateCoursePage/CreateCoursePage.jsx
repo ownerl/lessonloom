@@ -28,7 +28,13 @@ export default function CreateCoursePage() {
     }
     return (
         <main>
-            <h1>TESTING: adding course to database here</h1>
+            <div className="container">
+                <CourseSetUp />
+                <LessonList />
+                <Button />
+                <LessonSetUp />
+                <div className="test">
+                <h1>TESTING: adding course to database here</h1>
             <br />
 
             <div className="form-container">
@@ -53,11 +59,7 @@ export default function CreateCoursePage() {
                 </form>
             </div>
             <p className="error-message">&nbsp;{error}</p>
-            <div className="container">
-                <CourseSetUp />
-                <LessonList />
-                <Button />
-                <LessonSetUp />
+                </div>
             </div>
         </main>
     );
