@@ -12,9 +12,7 @@ module.exports = function(req, res, next) {
         console.log('decoded token: ', decoded)
         if (decoded.exp > 0 && decoded.sub) {
             // if valid token, decoded will be token's entire payload
-            req.user = decoded.user;
-            // if your app cares ... (optional)
-            req.exp = new Date(decoded.exp * 1000);
+            req.user = decoded;
             console.log('token was successfully passed to req.user')
             return next();
         } else {
