@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import * as course from "../../utilities/courses-api";
 import './CreateCoursePage.css'
 import CourseSetUp from '../../components/CourseSetUp/CourseSetUp'
@@ -8,8 +8,15 @@ import Button from '../../components/Button/Button'
 
 export default function CreateCoursePage() {
 
+    
 
-    const [file, setFile] = useState();
+    
+    const [file, setFile] = useState(null);
+    
+    useEffect(()=> {
+        console.log(file, 'this is the file')
+    }, [file])
+
     function handleImageChange(e) {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
@@ -19,11 +26,13 @@ export default function CreateCoursePage() {
     const [courseInfo, setCourseInfo] = useState({
         title: "",
         description: "",
-        bannerImage: "",
+        bannerImage: file,
     });
 
 
     const [error, setError] = useState("");
+
+
 
     function handleChange(evt) {
         setCourseInfo({ ...courseInfo, [evt.target.name]: evt.target.value });
@@ -61,7 +70,7 @@ export default function CreateCoursePage() {
                     />
                     <label>Description</label>
                     <input
-                        type="description"
+                        type="text"
                         name="description"
                         value={courseInfo.description}
                         onChange={handleChange}
@@ -69,7 +78,11 @@ export default function CreateCoursePage() {
                     />
 
                     <div className="trial">
-                        <input type="file" onChange={handleImageChange} />
+                        <input 
+                        type="file" 
+                        name="bannerImage" 
+                        value={courseInfo.bannerImage} 
+                        onChange={handleImageChange}  />
                         <img src={file} alt='file'/>
                     </div>
 
