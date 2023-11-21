@@ -9,6 +9,7 @@ import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
 import './App.css'
+import CourseEdit from "../../components/CourseEdit/CourseEdit";
 /*global google*/
 
 export default function App() {
@@ -39,6 +40,10 @@ export default function App() {
                             <Route
                                 path="/courses/test"
                                 element={<CoursePage />}
+                            />
+                            <Route
+                                path="/:courseId"
+                                element={<CourseEdit />}
                             />
                             <Route
                                 path="/courses/:id/:id"

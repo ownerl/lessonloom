@@ -11,6 +11,7 @@ module.exports = {
 async function show(req, res) {
     const course = await CourseModel.getCourse(req.params.courseId)
     console.log('click course: ', req.params.courseId)
+    console.log('this is the course res.json: ', course)
     res.json(course)
 }
 
