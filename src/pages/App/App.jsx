@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import NavBar from "../../components/Nav/NavBar";
 import CoursesIndexPage from "../CoursesIndex/CoursesIndexPage";
 import CoursePage from "../CoursePage/CoursePage";
-import LessonPage from "../LessonPage/LessonPage";
+import LessonPage from "../../components/LessonPage/LessonPage";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
