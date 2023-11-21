@@ -4,7 +4,7 @@ const lessonController = require('../../controllers/api/lessons');
 
 router.post('/new', lessonController.create)
 
-router.get('/:courseId', lessonController.show)
+router.get('/:lessonId', lessonController.show)
 
 
 module.exports = router;

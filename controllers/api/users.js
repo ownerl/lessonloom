@@ -7,5 +7,5 @@ module.exports = {
 }
 
 async function show(req, res) {
-    // repurposed code from passport.js here
+
 }
