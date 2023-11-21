@@ -30,7 +30,7 @@ export default function App() {
                                 path="/courses"
                                 element={<CoursesIndexPage />}
                             />
-                            <Route path="/user" element={<UserProfilePage />} />
+                            <Route path="/user" element={<UserProfilePage user={user} setUser={setUser} />} />
                             <Route
                                 path="/user/favorites"
                                 element={<UserFavoritesPage />}
