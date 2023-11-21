@@ -7,10 +7,22 @@ import LessonSetUp from '../../components/LessonSetUp/LessonSetUp'
 import Button from '../../components/Button/Button'
 
 export default function CreateCoursePage() {
+
+
+    const [file, setFile] = useState();
+    function handleImageChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
+
     const [courseInfo, setCourseInfo] = useState({
         title: "",
         description: "",
+        bannerImage: "",
     });
+
+
     const [error, setError] = useState("");
 
     function handleChange(evt) {
@@ -28,7 +40,13 @@ export default function CreateCoursePage() {
     }
     return (
         <main>
-            <h1>TESTING: adding course to database here</h1>
+            <div className="container">
+                <CourseSetUp />
+                <LessonList />
+                <Button />
+                <LessonSetUp />
+                <div className="test">
+                <h1>TESTING: adding course to database here</h1>
             <br />
 
             <div className="form-container">
@@ -49,15 +67,17 @@ export default function CreateCoursePage() {
                         onChange={handleChange}
                         required
                     />
+
+                    <div className="trial">
+                        <input type="file" onChange={handleImageChange} />
+                        <img src={file} alt='file'/>
+                    </div>
+
                     <button type="submit">Create Course</button>
                 </form>
             </div>
             <p className="error-message">&nbsp;{error}</p>
-            <div className="container">
-                <CourseSetUp />
-                <LessonList />
-                <Button />
-                <LessonSetUp />
+                </div>
             </div>
         </main>
     );
