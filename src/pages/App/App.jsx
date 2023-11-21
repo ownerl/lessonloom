@@ -37,7 +37,7 @@ export default function App() {
                             />
 
                             <Route
-                                path="/courses/:id"
+                                path="/courses/test"
                                 element={<CoursePage />}
                             />
                             <Route
