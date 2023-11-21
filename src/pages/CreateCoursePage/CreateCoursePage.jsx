@@ -1,5 +1,10 @@
 import { useRef, useState } from "react";
 import YouTube from 'react-youtube';
+import './CreateCoursePage.css'
+import CourseSetUp from '../../components/CourseSetUp/CourseSetUp'
+import LessonList from '../../components/LessonList/LessonList'
+import LessonSetUp from '../../components/LessonSetUp/LessonSetUp'
+import Button from '../../components/Button/Button'
 
 export default function CreateCoursePage() {
     const [videoUrl, setVideoUrl] = useState("");
@@ -37,7 +42,6 @@ export default function CreateCoursePage() {
 
     return (
         <main>
-            <h1>NewOrderPage</h1>
             <p>https://www.youtube.com/watch?v=kkSf95iI984</p>
             <p>https://www.youtube.com/watch?v=PkkFHO0kxPw</p>
             <p>https://www.youtube.com/embed/PkkFHO0kxPw?si=pXBsZqgSDhpuJMbz</p>
@@ -58,6 +62,12 @@ export default function CreateCoursePage() {
                     onChange={(e) => setVideoUrl(e.target.value)}
                 />
                 <button onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
+            </div>
+            <div className="container">
+                <CourseSetUp />
+                <LessonList />
+                <Button />
+                <LessonSetUp />
             </div>
         </main>
     );
