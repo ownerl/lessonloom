@@ -1,5 +1,10 @@
 import { useRef, useState } from "react";
 import * as course from "../../utilities/courses-api";
+import './CreateCoursePage.css'
+import CourseSetUp from '../../components/CourseSetUp/CourseSetUp'
+import LessonList from '../../components/LessonList/LessonList'
+import LessonSetUp from '../../components/LessonSetUp/LessonSetUp'
+import Button from '../../components/Button/Button'
 
 export default function CreateCoursePage() {
     const [courseInfo, setCourseInfo] = useState({
@@ -48,6 +53,12 @@ export default function CreateCoursePage() {
                 </form>
             </div>
             <p className="error-message">&nbsp;{error}</p>
+            <div className="container">
+                <CourseSetUp />
+                <LessonList />
+                <Button />
+                <LessonSetUp />
+            </div>
         </main>
     );
 }

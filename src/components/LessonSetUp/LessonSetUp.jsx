@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
 import YouTube from 'react-youtube';
+import './LessonSetUp.css'
 
-export default function CreateLessonPage() {
-    const [videoUrl, setVideoUrl] = useState("");
+export default function LessonSetUp() {
+  const [videoUrl, setVideoUrl] = useState("");
     const [isPlaying, setIsPlaying] = useState(true)
     const playerRef = useRef(null);
 
@@ -23,7 +24,8 @@ export default function CreateLessonPage() {
         },
     };
 
-    const togglePlayPause = () => {
+    const togglePlayPause = (evt) => {
+      evt.preventDefault();
         if (playerRef.current) {
             isPlaying ? playerRef.current.pauseVideo() : playerRef.current.playVideo();
             setIsPlaying(!isPlaying);
@@ -34,14 +36,16 @@ export default function CreateLessonPage() {
         console.log('pause func works')
     }
 
-
-    return (
-        <main>
-            <h1>NewOrderPage</h1>
-            <p>https://www.youtube.com/watch?v=kkSf95iI984</p>
-            <p>https://www.youtube.com/watch?v=PkkFHO0kxPw</p>
-            <p>https://www.youtube.com/embed/PkkFHO0kxPw?si=pXBsZqgSDhpuJMbz</p>
-            { videoCode ? <YouTube 
+  return (
+    <form className="lessonSetUp" action="">
+      <div className="top-half">
+        <div className="left-side">
+          <input placeholder="Lesson Title" />
+          <input className='description' placeholder="Decription" />
+        </div>
+        <div className="right-side">
+          <div className="youtube">
+          { videoCode ? <YouTube 
                 videoId={videoCode} 
                 opts={opts}
                 onPause={() => console.log('Paused!')}
@@ -51,14 +55,29 @@ export default function CreateLessonPage() {
                 :
                 <div></div>
             }
-            <div className="form-container">
+          </div>
+          <div className="form-container">
                 <label>YouTube Link</label>
+                <p>https://www.youtube.com/watch?v=kkSf95iI984</p>
                 <input
+                    className="url"
+                    placeholder="https://www.youtube.com/watch?v=kkSf95iI984"
                     value={videoUrl}
-                    onChange={(e) => setVideoUrl(e.target.value)}
+                    onChange={(evt) => setVideoUrl(evt.target.value)}
                 />
                 <button onClick={togglePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
             </div>
-        </main>
-    );
+          {/* <input type="text" className="url" placeholder="Insert Youtube URL"/> */}
+        </div>
+      </div>
+      <div className="bottom-half">
+        <input className="task" type="text" placeholder="Post Lesson Task"/>
+        <input className="notes" type="text" placeholder="Extra Notes"/>
+      </div>
+      <div className="button-row">
+      <button className='delete'>Delete</button>
+      <button className='save'>Save</button>
+      </div>
+    </form>
+  );
 }
