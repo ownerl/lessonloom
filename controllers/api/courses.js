@@ -21,7 +21,6 @@ async function create(req, res) {
         const newCourse = await CourseModel.create({
             title: req.body.title,
             description: req.body.description,
-            creatorId: req.user
         })
         console.log('The course (req.body) contains this -> ', newCourse)
         res.json(newCourse)
