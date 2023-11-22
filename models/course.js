@@ -21,8 +21,8 @@ const courseSchema = new Schema(
             ref: 'Lesson'
         }],
         categories: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Category'
+            type: String,
+            required: 'A category is required',
         }]
     }
 )
