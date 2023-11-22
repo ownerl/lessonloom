@@ -22,6 +22,10 @@ form.courseSetUp {
   border-radius: 5px;
 }
 
+.title input {
+  padding: 15px 10px;
+}
+
 .photo-upload {
   text-align: center;
   display: flex;

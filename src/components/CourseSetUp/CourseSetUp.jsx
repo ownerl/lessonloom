@@ -16,7 +16,7 @@ export default function CourseSetUp() {
     { value: 'Physics', label: 'Physics' },
     { value: 'Painting', label: 'Painting' },
     { value: 'AI', label: 'AI' },
-    { value: 'Busienss', label: 'Busienss' },
+    { value: 'Business', label: 'Business' },
     { value: 'Yoga', label: 'Yoga' },
     { value: 'Cooking', label: 'Cooking' },
     { value: 'marketing', label: 'marketing' }
