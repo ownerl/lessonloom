@@ -10,14 +10,20 @@ import Button from '../../components/Button/Button'
 // testing navigate to edit
 import CourseEdit from "../../components/CourseEdit/CourseEdit";
 
+    
+
 export default function CreateCoursePage() {
+    
+    // const [file, setFile] = useState('');
+    const [postImage, setPostImage] = useState("")
+    
+    useEffect(()=> {
+        console.log(typeof(postImage), 'this is the file')
+    }, [postImage])
+
     const navigate = useNavigate();
 
-    const [file, setFile] = useState();
-    function handleImageChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
+
 
     const [courseInfo, setCourseInfo] = useState({
         title: "",
@@ -28,8 +34,36 @@ export default function CreateCoursePage() {
 
     const [error, setError] = useState("");
 
+    async function handleImageChange(e) {
+        const file = e.target.files[0]
+        console.log(file);
+        const base64 = await convertToBase64(file)
+        console.log(base64)
+        setPostImage(base64)
+        setCourseInfo({ ...courseInfo, [e.target.name]: 'hello' });
+        setError("");
+        console.log(e.target.name)
+        // setFile(base64)
+        // setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
+    function convertToBase64(file) {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader()
+            fileReader.readAsDataURL(file)
+            fileReader.onload = () => {
+                resolve(fileReader.result)
+            };
+            fileReader.onerror = (error) => {
+                reject(error)
+            }
+        })
+    }
+
+
+
     function handleChange(evt) {
-        setCourseInfo({ ...courseInfo, [evt.target.name]: evt.target.value });
+        setCourseInfo({ ...courseInfo, bannerImage:postImage, [evt.target.name]: evt.target.value });
         setError("");
     }
 
@@ -64,17 +98,23 @@ export default function CreateCoursePage() {
                     />
                     <label>Description</label>
                     <input
-                        type="description"
+                        type="text"
                         name="description"
                         value={courseInfo.description}
                         onChange={handleChange}
                         required
                     />
 
+                    <div className="trial">
+                        <input 
+                        type="file" 
+                        name="bannerImage" 
+                        value={courseInfo.bannerImage} 
+                        onChange={handleImageChange}  />
                     {/* <div className="trial">
                         <input type="file" onChange={handleImageChange} />
                         <img src={file} alt='file'/>
-                    </div> */}
+                     */}</div>
 
                     <button type="submit">Create Course</button>
                 </form>
