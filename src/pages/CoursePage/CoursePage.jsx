@@ -18,6 +18,7 @@ export default function CoursePage() {
                     <h3>85%</h3>
                 </div>
                 <p>{courseInfo.description}</p>
+                <img src={courseInfo.bannerImage} alt="" />
             </div>
             <LessonList />
             {addLessonVisible ?
