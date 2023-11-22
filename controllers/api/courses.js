@@ -22,6 +22,7 @@ async function create(req, res) {
       title: req.body.title,
       description: req.body.description,
       bannerImage: req.body.bannerImage,
+      categories: req.body.categories,
     })
     console.log('The course (req.body) contains this -> ', newCourse)
     res.json(newCourse)
