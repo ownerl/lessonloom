@@ -16,7 +16,7 @@ export default function CourseSetUp() {
     { value: 'Physics', label: 'Physics' },
     { value: 'Painting', label: 'Painting' },
     { value: 'AI', label: 'AI' },
-    { value: 'Busienss', label: 'Busienss' },
+    { value: 'Business', label: 'Business' },
     { value: 'Yoga', label: 'Yoga' },
     { value: 'Cooking', label: 'Cooking' },
     { value: 'marketing', label: 'marketing' }
@@ -133,8 +133,10 @@ async function handleSubmit(evt) {
       // onChange={(evt) => {setCourseInfo({ ...courseInfo, categories: evt.target.value });}}
       />
     </div>
+    <div className="button-row">
     <button type="submit">Create Course</button>
     <p className="error-message">&nbsp;{error}</p>
+    </div>
 </form>
   )
 }
