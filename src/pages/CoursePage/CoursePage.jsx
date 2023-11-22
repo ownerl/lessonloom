@@ -23,7 +23,7 @@ export default function CoursePage() {
             {addLessonVisible ?
                 <Button addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} />
                 : 
-                <LessonSetUp addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} />
+                <LessonSetUp courseId={courseInfo._id} addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} />
             }
         </div>
     )

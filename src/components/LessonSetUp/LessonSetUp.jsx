@@ -3,7 +3,7 @@ import YouTube from "react-youtube";
 import "./LessonSetUp.css";
 import * as lesson from "../../utilities/lesson-api";
 
-export default function LessonSetUp({ addLessonVisible, setAddLessonVisible }) {
+export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVisible }) {
     const [lessonInfo, setLessonInfo] = useState({
         // title: "",
         // description: "",
@@ -99,9 +99,13 @@ export default function LessonSetUp({ addLessonVisible, setAddLessonVisible }) {
                 <p>https://www.youtube.com/watch?v=kkSf95iI984</p> */}
                         <input
                             className="url"
+                            name="youTubeLink"
                             placeholder="https://www.youtube.com/watch?v=kkSf95iI984"
                             value={videoUrl}
-                            onChange={(evt) => setVideoUrl(evt.target.value)}
+                            onChange={(evt) => {
+                                setVideoUrl(evt.target.value);
+                                setLessonInfo({ ...lessonInfo, [evt.target.name]: evt.target.value });
+                            }}
                         />
                         <button
                             className="youtube-btn"
@@ -132,6 +136,7 @@ export default function LessonSetUp({ addLessonVisible, setAddLessonVisible }) {
                     onChange={handleChange}
                     required
                 />
+                <input name="courseId" />
             </div>
             <div className="button-row">
                 {/* <button className="delete">Delete</button> */}

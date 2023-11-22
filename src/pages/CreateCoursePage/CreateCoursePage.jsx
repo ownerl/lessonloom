@@ -40,7 +40,7 @@ export default function CreateCoursePage() {
         const base64 = await convertToBase64(file)
         console.log(base64)
         setPostImage(base64)
-        setCourseInfo({ ...courseInfo, [e.target.name]: 'hello' });
+        setCourseInfo({ ...courseInfo, [e.target.name]: base64 });
         setError("");
         console.log(e.target.name)
         // setFile(base64)
@@ -63,7 +63,7 @@ export default function CreateCoursePage() {
 
 
     function handleChange(evt) {
-        setCourseInfo({ ...courseInfo, bannerImage:postImage, [evt.target.name]: evt.target.value });
+        setCourseInfo({ ...courseInfo, [evt.target.name]: evt.target.value });
         setError("");
     }
 
@@ -109,12 +109,8 @@ export default function CreateCoursePage() {
                         <input 
                         type="file" 
                         name="bannerImage" 
-                        value={courseInfo.bannerImage} 
                         onChange={handleImageChange}  />
-                    {/* <div className="trial">
-                        <input type="file" onChange={handleImageChange} />
-                        <img src={file} alt='file'/>
-                     */}</div>
+                    </div>
 
                     <button type="submit">Create Course</button>
                 </form>
