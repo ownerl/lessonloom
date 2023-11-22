@@ -43,13 +43,11 @@ export default function CreateCoursePage() {
             setError('Failed To Create Course')
         }
     }
+
     return (
         <main>
             <div className="container">
                 <CourseSetUp />
-                <LessonList />
-                <Button />
-                <LessonSetUp />
                 <div className="test">
                 <h1>TESTING: adding course to database here</h1>
             <br />

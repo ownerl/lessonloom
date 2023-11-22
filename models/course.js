@@ -37,3 +37,5 @@ courseSchema.methods.getCourse = async function ( courseId ) {
 module.exports = {
     CourseModel: mongoose.model('Course', courseSchema),
 }
+
+

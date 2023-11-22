@@ -3,10 +3,10 @@ import YouTube from "react-youtube";
 import "./LessonSetUp.css";
 import * as lesson from "../../utilities/lesson-api";
 
-export default function LessonSetUp() {
+export default function LessonSetUp({ addLessonVisible, setAddLessonVisible }) {
     const [lessonInfo, setLessonInfo] = useState({
-        title: "",
-        description: "",
+        // title: "",
+        // description: "",
     });
     const [error, setError] = useState("");
 
@@ -18,7 +18,9 @@ export default function LessonSetUp() {
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
+            setAddLessonVisible(!addLessonVisible);
             lesson.createLesson(lessonInfo);
+            setLessonInfo({})
         } catch {
             setError("Failed To Create lesson");
         }
@@ -54,10 +56,6 @@ export default function LessonSetUp() {
             setIsPlaying(!isPlaying);
         }
     };
-
-    function testFunction() {
-        console.log("pause func works");
-    }
 
     return (
         <form className="lessonSetUp" action="">
@@ -136,9 +134,10 @@ export default function LessonSetUp() {
                 />
             </div>
             <div className="button-row">
-                <button className="delete">Delete</button>
-                <button type="submit" className="save">Save</button>
+                {/* <button className="delete">Delete</button> */}
+                <button type="submit" className="save" onClick={handleSubmit} >Save</button>
             </div>
+            
         </form>
     );
 }
