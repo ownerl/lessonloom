@@ -1,14 +1,14 @@
-import sendRequest from './send-request';
+import sendRequest from "./send-request";
 
-const BASE_URL = '/api/courses';
+const BASE_URL = "/api/courses";
 
 // Retrieve an unpaid order for the logged in user
 export function getCourse(courseId) {
-  return sendRequest(`${BASE_URL}/${courseId}`);
+    return sendRequest(`${BASE_URL}/${courseId}`);
 }
 
 export function createCourse(courseInfo) {
-  return sendRequest(`${BASE_URL}/new`, 'POST', courseInfo);
+    return sendRequest(`${BASE_URL}/new`, "POST", courseInfo);
 }
 
 // // Add an item to the cart

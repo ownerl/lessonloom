@@ -4,11 +4,12 @@ import { jwtDecode } from "jwt-decode";
 import NavBar from "../../components/Nav/NavBar";
 import CoursesIndexPage from "../CoursesIndex/CoursesIndexPage";
 import CoursePage from "../CoursePage/CoursePage";
-import LessonPage from "../LessonPage/LessonPage";
+import Lesson from "../../components/Lesson/Lesson";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
 import './App.css'
+import CourseEdit from "../../components/CourseEdit/CourseEdit";
 /*global google*/
 
 export default function App() {
@@ -41,8 +42,12 @@ export default function App() {
                                 element={<CoursePage />}
                             />
                             <Route
+                                path="/:courseId"
+                                element={<CourseEdit />}
+                            />
+                            <Route
                                 path="/courses/:id/:id"
-                                element={<LessonPage />}
+                                element={<Lesson />}
                                 />
                             <Route
                                 path="/courses/create"

@@ -1,0 +1,78 @@
+form.courseSetUp {
+  background-color: #E5E5E5;
+  padding: 30px;
+  border: 1px solid #AEAEAE;
+  border-radius: 5px;
+  margin-bottom: 60px;
+}
+
+.top-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.top-row input {
+  width: 100%;
+  margin: 0px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.photo-upload {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #AEAEAE;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #454545;
+}
+
+.photo-upload img {
+  width: 17px;
+  margin-left: 10px;
+}
+
+.middle-row input {
+  width: 100%;
+  margin: 0px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  height: 150px;
+}
+
+.bottom-row {
+  text-align: center;
+}
+
+.bottom-row h3 {
+  margin: 30px 0px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.cat {
+  border: 1px solid #AEAEAE;
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.7em;
+  background-color: #fff;
+}
+
+.cat:hover {
+  border: 1px solid #000;
+}
