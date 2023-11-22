@@ -133,8 +133,10 @@ async function handleSubmit(evt) {
       // onChange={(evt) => {setCourseInfo({ ...courseInfo, categories: evt.target.value });}}
       />
     </div>
+    <div className="button-row">
     <button type="submit">Create Course</button>
     <p className="error-message">&nbsp;{error}</p>
+    </div>
 </form>
   )
 }
