@@ -136,7 +136,12 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
                     onChange={handleChange}
                     required
                 />
-                <input name="courseId" />
+                <input 
+                    name="courseId"
+                    value={courseId}
+                    type="hidden"
+                    required
+                />
             </div>
             <div className="button-row">
                 {/* <button className="delete">Delete</button> */}
