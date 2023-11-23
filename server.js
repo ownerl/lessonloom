@@ -3,6 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const coursesRouter = require('./routes/api/courses');
+const lessonsRouter = require('./routes/api/lessons');
 // Always require and configure near the top
 require('dotenv').config();
 // Connect to the database
@@ -25,6 +26,7 @@ const port = process.env.PORT || 3001;
 
 // Put API routes here, before the "catch all" route
 app.use('/api/courses', coursesRouter);
+app.use('/api/lessons', lessonsRouter);
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

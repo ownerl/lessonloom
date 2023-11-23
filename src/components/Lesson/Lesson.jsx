@@ -1,15 +1,33 @@
-import './Lesson.css'
-import edit from '../../img/edit.svg'
+import "./Lesson.css"
+import { useEffect, useState } from "react";
+import edit from "../../img/edit.svg"
+import * as lesson from "../../utilities/lesson-api";
 
-export default function Lesson() {
+export default function Lesson({ lessonId }) {
+  const [lessonInfo, setLessonInfo] = useState()
 
-  return(
-      <div className='course'>
-      <div className="top"></div>
-      <div className="bottom">
-        <div className="left">Lesson</div>
-        <div className="right"><img src={edit} alt ="favourite button"/></div>
+  useEffect(() => {
+    lesson.getLesson(lessonId).then((les) => {
+      setLessonInfo(les);
+    }).catch((err) => {
+      console.error("Error fetching lesson: ", err)
+    })
+  }, [])
+
+  if (lessonInfo) {
+    return(
+        <div className="course">
+        <div className="top"></div>
+        <div className="bottom">
+          <div className="left">{ lessonInfo.title }</div>
+          <div className="right"><img src={edit} alt ="favourite button"/></div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  else {
+    return <div></div>
+  }
+
 }

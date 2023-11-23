@@ -23,11 +23,6 @@ const lessonSchema = new Schema({
     }
 })
 
-lessonSchema.methods.getLesson = async function ( lessonId ) {
-    const lesson = this.findById(lessonId);
-    return lesson;
-}
-
 module.exports = {
     LessonModel: mongoose.model('Lesson', lessonSchema)
 }
