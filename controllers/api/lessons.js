@@ -9,9 +9,10 @@ module.exports = {
 };
 
 async function show(req, res) {
-    const course = await LessonModel.getLesson(req.params.courseId)
-    console.log('click course: ', req.params.courseId)
-    res.json(course)
+    const lesson = await LessonModel.findById(req.params.lessonId)
+    console.log('click lesson: ', req.params.lessonId)
+    console.log('da lesson', lesson)
+    res.json(lesson)
 }
 
 async function create(req, res) {

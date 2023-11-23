@@ -9,6 +9,7 @@ export default function CoursePage() {
     const location = useLocation();
     const courseInfo = location.state;
     const [addLessonVisible, setAddLessonVisible] = useState(true)
+    const [resetKey, setResetKey] = useState(0);
 
     return (
         <div className="coursepage-container">
@@ -20,11 +21,11 @@ export default function CoursePage() {
                 <p>{courseInfo.description}</p>
                 <img src={courseInfo.bannerImage} alt="" />
             </div>
-            <LessonList />
+            <LessonList key={resetKey} courseId={courseInfo._id} />
             {addLessonVisible ?
                 <Button addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} />
                 : 
-                <LessonSetUp courseId={courseInfo._id} addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} />
+                <LessonSetUp courseId={courseInfo._id} addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} resetKey={resetKey} setResetKey={setResetKey}  />
             }
         </div>
     )

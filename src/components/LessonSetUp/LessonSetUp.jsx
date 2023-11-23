@@ -2,11 +2,15 @@ import { useRef, useState } from "react";
 import YouTube from "react-youtube";
 import "./LessonSetUp.css";
 import * as lesson from "../../utilities/lesson-api";
+import * as course from "../../utilities/courses-api";
 
-export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVisible }) {
+export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVisible, resetKey, setResetKey }) {
     const [lessonInfo, setLessonInfo] = useState({
-        // title: "",
-        // description: "",
+        title: "",
+        description: "",
+        youTubeLink: "",
+        task: "",
+        notes: "",
     });
     const [error, setError] = useState("");
 
@@ -19,8 +23,12 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
         evt.preventDefault();
         try {
             setAddLessonVisible(!addLessonVisible);
-            lesson.createLesson(lessonInfo);
+            const newLesson = await lesson.createLesson(lessonInfo);
+            const addedLessonToCourse = await course.addLesson(courseId, newLesson);
+            console.log('the return after addlessontocourse controller executes:  ', addedLessonToCourse)
             setLessonInfo({})
+            // the below line triggers refresh of LessonList element
+            setResetKey(resetKey + 1);
         } catch {
             setError("Failed To Create lesson");
         }
