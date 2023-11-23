@@ -25,7 +25,7 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
             setAddLessonVisible(!addLessonVisible);
             const newLesson = await lesson.createLesson(lessonInfo);
             const addedLessonToCourse = await course.addLesson(courseId, newLesson);
-            console.log('the return after addlessontocourse controller executes:  ', addedLessonToCourse)
+            //console.log('the return after addlessontocourse controller executes:  ', addedLessonToCourse)
             setLessonInfo({})
             // the below line triggers refresh of LessonList element
             setResetKey(resetKey + 1);

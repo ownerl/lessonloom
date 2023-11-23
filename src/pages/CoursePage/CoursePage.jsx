@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import './CoursePage.css';
-import Button from '../../components/Button/Button';
-import LessonSetUp from '../../components/LessonSetUp/LessonSetUp';
-import LessonList from '../../components/LessonList/LessonList';
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import "./CoursePage.css";
+import Button from "../../components/Button/Button";
+import LessonSetUp from "../../components/LessonSetUp/LessonSetUp";
+import LessonList from "../../components/LessonList/LessonList";
 
 export default function CoursePage() {
     const location = useLocation();
     const courseInfo = location.state;
-    const [addLessonVisible, setAddLessonVisible] = useState(true)
+    const [addLessonVisible, setAddLessonVisible] = useState(true);
     const [resetKey, setResetKey] = useState(0);
 
     return (
@@ -22,11 +22,19 @@ export default function CoursePage() {
                 <img src={courseInfo.bannerImage} alt="" />
             </div>
             <LessonList key={resetKey} courseId={courseInfo._id} />
-            {addLessonVisible ?
-                <Button addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} />
-                : 
-                <LessonSetUp courseId={courseInfo._id} addLessonVisible={addLessonVisible} setAddLessonVisible={setAddLessonVisible} resetKey={resetKey} setResetKey={setResetKey}  />
-            }
+            <Button
+                addLessonVisible={addLessonVisible}
+                setAddLessonVisible={setAddLessonVisible}
+            />
+            {!addLessonVisible && (
+                <LessonSetUp
+                    courseId={courseInfo._id}
+                    addLessonVisible={addLessonVisible}
+                    setAddLessonVisible={setAddLessonVisible}
+                    resetKey={resetKey}
+                    setResetKey={setResetKey}
+                />
+            )}
         </div>
-    )
+    );
 }

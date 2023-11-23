@@ -10,7 +10,7 @@ export default function LessonList({ courseId }) {
         const fetchCourse = async () => {
             await course.getCourse(courseId).then((data) => {
                 setCourseInfo(data);
-                console.log("thi shhit is data: ", data);
+                //console.log("thi shhit is data: ", data);
             });
         };
         fetchCourse();

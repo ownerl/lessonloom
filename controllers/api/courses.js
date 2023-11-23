@@ -25,7 +25,7 @@ async function create(req, res) {
       bannerImage: req.body.bannerImage,
       categories: req.body.categories,
     })
-    console.log('The course (req.body) contains this -> ', newCourse)
+    //console.log('The course (req.body) contains this -> ', newCourse)
     res.json(newCourse)
   } catch (err) {
     res.status(400).json(err)
@@ -33,14 +33,14 @@ async function create(req, res) {
 }
 
 async function addLesson(req, res) {
-  console.log('the req body of addLesson course controller: ', req.body._id)
+  //console.log('the req body of addLesson course controller: ', req.body._id)
 
   const filter = { _id: req.params.courseId}
   const update = {"$push": { "lessons": req.body }}
   const course = await CourseModel.findOneAndUpdate(filter, update, {
     new: true
   });
-  console.log('the returned res.json course: ', course)
+  //console.log('the returned res.json course: ', course)
   res.json(course)
   //course.lessons.push()
 }
