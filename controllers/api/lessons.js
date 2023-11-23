@@ -22,6 +22,9 @@ async function create(req, res) {
             title: req.body.title,
             description: req.body.description,
             youTubeLink: req.body.youTubeLink,
+            task: req.body.task,
+            notes: req.body.notes,
+            courseId: req.body
         })
         console.log('The course (req.body) contains this -> ', newCourse)
         res.json(newCourse)
