@@ -14,14 +14,20 @@ export default function Lesson({ lessonId }) {
     })
   }, [])
 
-  console.log('this is lesson info: ', lessonInfo)
-  return(
-      <div className="course">
-      <div className="top"></div>
-      <div className="bottom">
-        <div className="left">{ lessonInfo.title }</div>
-        <div className="right"><img src={edit} alt ="favourite button"/></div>
+  if (lessonInfo) {
+    return(
+        <div className="course">
+        <div className="top"></div>
+        <div className="bottom">
+          <div className="left">{ lessonInfo.title }</div>
+          <div className="right"><img src={edit} alt ="favourite button"/></div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  else {
+    return <div></div>
+  }
+
 }
