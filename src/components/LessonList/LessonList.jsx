@@ -1,5 +1,5 @@
 import "./LessonList.css";
-import Lesson from "../../components/Lesson/Lesson";
+import LessonCard from "../LessonCard/LessonCard";
 import { useEffect, useState } from "react";
 import * as course from "../../utilities/courses-api";
 
@@ -19,7 +19,7 @@ export default function LessonList({ courseId }) {
     useEffect(() => {
         setListOfLessons(
             courseInfo.lessons?.map((id) => {
-                return <Lesson lessonId={id} />;
+                return <LessonCard lessonId={id} />;
             })
         );
     }, [courseInfo]);

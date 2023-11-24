@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import NavBar from "../../components/Nav/NavBar";
 import CoursesIndexPage from "../CoursesIndex/CoursesIndexPage";
 import CoursePage from "../CoursePage/CoursePage";
-import Lesson from "../../components/Lesson/Lesson";
+// import Lesson from "../../components/Lesson/LessonCard";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
@@ -19,9 +19,7 @@ export default function App() {
         <div className="App">
             {/* <h1>Hello {name}</h1> */}
             <NavBar user={user} setUser={setUser} />
-            {
-                user ? (
-                    <>
+            
                         <Routes>
                             <Route
                                 path="/"
@@ -31,12 +29,6 @@ export default function App() {
                                 path="/courses"
                                 element={<CoursesIndexPage />}
                             />
-                            <Route path="/user" element={<UserProfilePage user={user} setUser={setUser} />} />
-                            <Route
-                                path="/user/favorites"
-                                element={<UserFavoritesPage />}
-                            />
-
                             <Route
                                 path="/courses/test"
                                 element={<CoursePage />}
@@ -45,25 +37,24 @@ export default function App() {
                                 path="/:courseId"
                                 element={<CoursePage />}
                             />
-                            <Route
+                            {/* <Route
                                 path="/courses/:id/:id"
                                 element={<Lesson />}
-                                />
+                                /> */}
                             <Route
                                 path="/courses/create"
                                 element={<CreateCoursePage />}
                             />
+                            { user && (
+                                <>
+                                    <Route path="/user" element={<UserProfilePage user={user} setUser={setUser} />} />
+                                    <Route
+                                    path="/user/favorites"
+                                    element={<UserFavoritesPage />}
+                                    />
+                                </>
+                            )}
                         </Routes>
-                    </>
-                ) : (
-                    <>
-                        
-                    <h1>Please log in yo!</h1>
-                        
-                    </>
-                )
-                // <AuthPage setUser={setUser}/>
-            }
         </div>
     );
 }
