@@ -6,7 +6,7 @@ module.exports = {
 
 async function login(req, res) {
     const userInfo = req.body.userInfo;
-    console.log("this is user info from login route: ", userInfo);
+    console.log("this is req info from login route: ", req.body);
     console.log("dis da client id: ", req.body.CLIENT_ID);
     console.log("dis da token id: ", req.body.idToken);
     try {
@@ -29,3 +29,4 @@ async function login(req, res) {
         res.json(err);
     }
 }
+

@@ -15,14 +15,10 @@ module.exports = async function(req, res, next) {
         });
         const payload = ticket.getPayload();
         const userid = payload["sub"];
-        // Perform server-side actions using the verified user information
-
-        req.user = payload;
+        console.log('Token verified')
         next();
-        // res.status(200).send("Token verification successful");
     } catch (error) {
         console.error("Error verifying token:", error.message);
-        next();
-        // res.status(401).send("Token verification failed");
+        res.status(401).json({ error: 'Invalid Google credentials' });
     }
 };
