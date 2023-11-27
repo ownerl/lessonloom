@@ -8,7 +8,6 @@ export default function CoursesIndexPage() {
 
 
 
-
     return (
         <div className="container">
             <h1>Categories</h1>
