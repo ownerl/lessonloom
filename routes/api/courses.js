@@ -9,6 +9,6 @@ router.get('/:courseId', courseController.show)
 
 router.post('/:courseId/addLesson', courseController.addLesson)
 
-router.post('/', courseController.all)
+router.get('/', courseController.all)
 
 module.exports = router;

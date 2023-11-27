@@ -16,7 +16,7 @@ export function addLesson(courseId, lessonId) {
 }
 
 export function getAllCourses(filter) {
-    return sendRequest(`/`, filter)
+    return sendRequest(`${BASE_URL}/`, filter)
 }
 // // Add an item to the cart
 // export function addLessontToCourse(itemId) {
