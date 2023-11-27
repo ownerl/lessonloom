@@ -3,6 +3,8 @@ const path = require('path')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
 const coursesRouter = require('./routes/api/courses')
+const lessonsRouter = require('./routes/api/lessons')
+const usersRouter = require('./routes/api/users')
 // Always require and configure near the top
 require('dotenv').config()
 // Connect to the database
@@ -19,12 +21,13 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 // middleware to verify token and assign user object of payload to req.user
 // mount before routes
-app.use(require('./config/checkToken'))
 
 const port = process.env.PORT || 3001
 
 // Put API routes here, before the "catch all" route
 app.use('/api/courses', coursesRouter)
+app.use('/api/lessons', lessonsRouter)
+app.use('/api/users', usersRouter)
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

@@ -10,10 +10,13 @@ export default function NavBar({user, setUser}) {
                 <h2><Link to="/courses">LessonLoom</Link></h2>
                 <ul className='nav-links'>
                     <li className='nav-item'><Link to="/courses">All Courses</Link></li>
-                    <li className='nav-item'><Link to="/courses/create">Create a Course</Link></li>
-                    <li className='nav-item'><Link to="/user">My Profile</Link></li>
-                    <li className='nav-item'><Link to="/courses/test">Course</Link></li>
-                    <li className='nav-item'><Link to="/user/favorites">test</Link></li>
+                    {user && (
+                        <>
+                            <li className='nav-item'><Link to="/courses/create">Create a Course</Link></li>
+                            <li className='nav-item'><Link to="/user/favorites">Favourites</Link></li>
+                            <li className='nav-item'><Link to="/user">My Profile</Link></li>
+                        </>
+                    )}
                     <li className='nav-item'><Login showNav={showNav} setShowNav={setShowNav} use={user} setUser={setUser}/></li>
                 </ul>
         </nav>

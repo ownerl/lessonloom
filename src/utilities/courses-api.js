@@ -11,6 +11,10 @@ export function createCourse(courseInfo) {
     return sendRequest(`${BASE_URL}/new`, "POST", courseInfo);
 }
 
+export function addLesson(courseId, lessonId) {
+    return sendRequest(`${BASE_URL}/${courseId}/addLesson`, "POST", lessonId);
+}
+
 // // Add an item to the cart
 // export function addLessontToCourse(itemId) {
 //   // Just send itemId for best security (no pricing)
