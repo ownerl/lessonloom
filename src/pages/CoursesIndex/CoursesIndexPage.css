@@ -34,3 +34,12 @@
   gap: 20px;
   width: 100%;
 }
+
+.content {
+  display: none;
+}
+
+.show-content {
+  display: block;
+  width: 100%;
+}
