@@ -9,6 +9,7 @@ import CourseView from "../../components/CourseView/CourseView";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
+import LessonViewPage from "../LessonViewPage/LessonViewPage"
 import './App.css'
 import CourseEdit from "../../components/CourseEdit/CourseEdit";
 /*global google*/
@@ -42,10 +43,10 @@ export default function App() {
                                 path="/:courseId"
                                 element={<CoursePage />}
                             />
-                            {/* <Route
-                                path="/courses/:id/:id"
-                                element={<Lesson />}
-                                /> */}
+                            <Route
+                                path="/courses/:id/view"
+                                element={<LessonViewPage />}
+                                />
                             <Route
                                 path="/courses/create"
                                 element={<CreateCoursePage />}
