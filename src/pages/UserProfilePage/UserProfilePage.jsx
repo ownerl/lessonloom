@@ -1,7 +1,7 @@
 import './UserProfilePage.css'
 import { useState } from 'react'
 import MyCourse from '../../components/MyCourse/MyCourse'
-import Course from '../../components/Course/Course'
+import CourseCard from '../../components/CourseCard/CourseCard'
 
 
 export default function UserProfilePage({user}) {
@@ -39,28 +39,28 @@ export default function UserProfilePage({user}) {
             </div>
             <div className={toggle === 2 ? "show-content" : "content"}>
             <div className="profile-course-grid">
-                <Course />
-                <Course />
-                <Course />
-                <Course />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
             </div>
             </div>
             <div className={toggle === 3 ? "show-content" : "content"}>
             <div className="profile-course-grid">
-                <Course />
-                <Course />
-                <Course />
-                <Course />
-                <Course />
-                <Course />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
             </div>
             </div>
             <div className={toggle === 4 ? "show-content" : "content"}>
             <div className="profile-course-grid">
-                <Course />
-                <Course />
-                <Course />
-                <Course />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
+                <CourseCard />
             </div>
             </div>
         </div>

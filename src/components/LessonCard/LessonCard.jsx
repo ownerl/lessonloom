@@ -1,4 +1,4 @@
-import "./Lesson.css"
+import "./LessonCard.css"
 import { useEffect, useState } from "react";
 import edit from "../../img/edit.svg"
 import * as lesson from "../../utilities/lesson-api";
