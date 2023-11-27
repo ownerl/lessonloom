@@ -1,0 +1,10 @@
+.container-grey {
+  background-color: #E5E5E5;
+  border: 1px solid #AEAEAE;
+  margin-bottom: 30px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}

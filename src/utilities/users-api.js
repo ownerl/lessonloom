@@ -1,14 +1,8 @@
+import { jwtDecode } from "jwt-decode";
 import sendRequest from "./send-request";
-const BASE_URL = '/api/users';
 
-export async function signUp(userData) {
-    return sendRequest(`${BASE_URL}/signup`, 'POST', userData);
-}
+const BASE_URL = "/api/users";
 
-export async function login(credentials) {
-    return sendRequest(`${BASE_URL}/login`, 'POST', credentials)
-}
-
-export async function checkToken() {
-    return sendRequest(`${BASE_URL}/check-token`);
+export function loginUser(userInfo) {
+    return sendRequest(`${BASE_URL}/login`, "POST", userInfo);
 }

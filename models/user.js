@@ -18,12 +18,9 @@ const createdCourseSchema = new Schema({
 const userSchema = new Schema(
     {
         name: String,
-        googleId: {
-            type: String,
-            required: true,
-        },
+        googleId: String,
         email: String,
-        avatar: String,
+        picture: String,
         savedCourses: [savedCourseSchema],
         createdCourses: [createdCourseSchema],
         educator: Boolean
