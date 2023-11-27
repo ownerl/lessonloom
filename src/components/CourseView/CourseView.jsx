@@ -8,7 +8,7 @@ import * as course from "../../utilities/courses-api";
 
 
 export default function CourseView() {
-    const courseInfo = course.getCourse(courseId)
+    const courseInfo = course.getCourse()
     const [addLessonVisible, setAddLessonVisible] = useState(true);
     const [resetKey, setResetKey] = useState(0);
 
