@@ -10,6 +10,7 @@ import CatSix from '../../components/Categories/CatSix';
 import CatSeven from '../../components/Categories/CatSeven';
 import CatEight from '../../components/Categories/CatEight';
 import CatNine from '../../components/Categories/CatNine';
+import * as course from '../../utilities/courses-api';
 
 export default function CoursesIndexPage() {
 

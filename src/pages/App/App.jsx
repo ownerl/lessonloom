@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import NavBar from "../../components/Nav/NavBar";
 import CoursesIndexPage from "../CoursesIndex/CoursesIndexPage";
 import CoursePage from "../CoursePage/CoursePage";
+import CourseView from "../../components/CourseView/CourseView";
 // import Lesson from "../../components/Lesson/LessonCard";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
@@ -32,6 +33,10 @@ export default function App() {
                             <Route
                                 path="/courses/test"
                                 element={<CoursePage />}
+                            />
+                            <Route 
+                                path="/:courseId/view"
+                                element={<CourseView />}
                             />
                             <Route
                                 path="/:courseId"
