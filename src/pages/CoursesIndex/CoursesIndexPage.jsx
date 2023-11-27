@@ -1,7 +1,14 @@
+import { useState, useEffect, useRef } from 'react';
 import './CoursesIndexPage.css'
 import Course from '../../components/Course/Course'
 
 export default function CoursesIndexPage() {
+
+
+
+
+
+
     return (
         <div className="container">
             <h1>Categories</h1>
