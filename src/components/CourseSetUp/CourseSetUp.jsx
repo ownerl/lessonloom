@@ -4,6 +4,7 @@ import * as course from "../../utilities/courses-api";
 import './CourseSetUp.css'
 import photoUpload from '../../img/gallery 1.png'
 import Select from 'react-select'
+import Gallery from '../../img/gallery 1.png'
 
 export default function CourseSetUp() {
 
@@ -105,10 +106,13 @@ async function handleSubmit(evt) {
         </div>
         <div className="photo-upload">
           {/* Course Photo<img src={photoUpload} alt="upload" />  */}
+          <img src={Gallery} alt="choose" />
           <input 
           type="file" 
           name="bannerImage" 
-          onChange={handleImageChange}  />
+          onChange={handleImageChange}
+          required
+          />
         </div>
     </div>
     <div className="middle-row">
