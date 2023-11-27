@@ -8,6 +8,7 @@ import CoursePage from "../CoursePage/CoursePage";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
+import LessonViewPage from "../LessonViewPage/LessonViewPage"
 import './App.css'
 import CourseEdit from "../../components/CourseEdit/CourseEdit";
 /*global google*/
