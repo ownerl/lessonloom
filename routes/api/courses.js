@@ -1,7 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const courseController = require('../../controllers/api/courses');
-
+const express = require('express')
+const router = express.Router()
+const courseController = require('../../controllers/api/courses')
 
 router.post('/new', courseController.create)
 
@@ -11,4 +10,4 @@ router.post('/:courseId/addLesson', courseController.addLesson)
 
 router.get('/', courseController.all)
 
-module.exports = router;
+module.exports = router
