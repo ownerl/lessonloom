@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './CoursesIndexPage.css'
 import Course from '../../components/Course/Course'
+import * as course from '../../utilities/courses-api';
 
 export default function CoursesIndexPage() {
 

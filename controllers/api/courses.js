@@ -6,6 +6,7 @@ module.exports = {
   show,
   create,
   addLesson,
+  all
 }
 
 async function show(req, res) {
@@ -43,4 +44,22 @@ async function addLesson(req, res) {
   //console.log('the returned res.json course: ', course)
   res.json(course)
   //course.lessons.push()
+}
+
+async function all(req, res) {
+  // req.body contains filter parameters: sortBy and limitNumber which are passed from the jsx 
+  try {
+    let courses = await CourseModel.find()
+    if (req.body.sortBy) {
+      courses = courses.sort(req.body.sortBy);
+    }
+    if (req.body.limitNumber) {
+      courses = courses.limit(req.body.limitNumber);
+    }
+    res.json(courses)
+  } catch (err) {
+    console.log('Error encountered: ', err)
+    res.status(400).json(err)
+  }
+
 }
