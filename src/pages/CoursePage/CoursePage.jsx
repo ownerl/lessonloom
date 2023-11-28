@@ -1,15 +1,51 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./CoursePage.css";
 import Button from "../../components/Button/Button";
 import LessonSetUp from "../../components/LessonSetUp/LessonSetUp";
 import LessonList from "../../components/LessonList/LessonList";
+import * as course from "../../utilities/courses-api";
+import back from "../../img/gallery 1.png";
+
 
 export default function CoursePage() {
-    const location = useLocation();
-    const courseInfo = location.state;
+    const navigate = useNavigate();
     const [addLessonVisible, setAddLessonVisible] = useState(true);
+    const location = useLocation();
     const [resetKey, setResetKey] = useState(0);
+    const [courseInfo, setCourseInfo] = useState({
+        _id: null,
+        title: "",
+        description: "",
+        bannerImage: null,
+        lessons: [],
+        categories: [],
+    });
+
+    
+    useEffect(() => {
+        const fetchCourse = async () => {
+            console.log('course info in useffect: ',location.state)
+            await course.getCourse(location.state._id).then((data) => {
+                setCourseInfo(data);
+                console.log("location state! ", location.state);
+                console.log("course info! ", data);
+                console.log(
+                    "course info! Now with Lessons! ",
+                    data.title,
+                    data.description,
+                    data.lessons,
+                );
+            });
+        };
+        fetchCourse();
+    }, [resetKey]);
+
+
+    function handleBack() {
+        const courseNav = {courseId: courseInfo._id}
+        navigate(`/${courseInfo._id}/view`, { state: courseNav });
+    }
 
     return (
         <div className="coursepage-container">
@@ -20,8 +56,9 @@ export default function CoursePage() {
                 </div>
                 <p>{courseInfo ? courseInfo.description : ''}</p>
                 <img src={courseInfo ? courseInfo.bannerImage : null} alt="" />
+                <img className="backImg" onClick={handleBack} src={back} alt="favourite button" />
             </div>
-            <LessonList key={resetKey} courseId={courseInfo ? courseInfo._id : null} />
+            <LessonList key={resetKey} courseLessons={courseInfo ? courseInfo.lessons : null} />
             <Button
                 addLessonVisible={addLessonVisible}
                 setAddLessonVisible={setAddLessonVisible}

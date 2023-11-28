@@ -10,7 +10,7 @@ module.exports = {
 }
 
 async function show(req, res) {
-  const course = await CourseModel.findById(req.params.courseId)
+  const course = await CourseModel.findById(req.params.courseId).populate("lessons")
   //console.log('click course: ', req.params.courseId)
   //console.log('this is the course res.json: ', course)
   res.json(course)
