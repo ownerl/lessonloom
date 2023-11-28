@@ -1,4 +1,4 @@
-export default function LessonViewPage() {
+export default function LessonViewPage({lessonInfo}) {
 	return (
 		<div>
 			<h1>Lesson View Page</h1>

@@ -13,14 +13,13 @@ import CatNine from '../../components/Categories/CatNine';
 import * as course from '../../utilities/courses-api';
 
 export default function CoursesIndexPage() {
-    const courseArr = course.getAllCourses
+    // const filter = {}
+    // const courseArr = course.getAllCourses(filter).then(data => console.log("COURSEARR: " + data))
     const [toggle, setToggle] = useState(1)
-    console.log(courseArr)
 
     function updateToggle(id) {
         setToggle(id)
     }
-
     return (
         <div className="container">
             <h1>Categories</h1>
@@ -41,7 +40,9 @@ export default function CoursesIndexPage() {
                 <div className="other-courses" >
                     <h1>Hot Courses</h1>
                     <div className="course-grid">
-                        
+                        {/* {courseArr.map(course => (
+                            <Course courseInfo={course}/>
+                        ))} */}
                         <Course />
                         <Course />
                         <Course />
