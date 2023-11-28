@@ -10,7 +10,7 @@ module.exports = {
 }
 
 async function show(req, res) {
-  const course = await CourseModel.findById(req.params.courseId)
+  const course = await CourseModel.findById(req.params.courseId).populate("lessons")
   //console.log('click course: ', req.params.courseId)
   //console.log('this is the course res.json: ', course)
   res.json(course)
@@ -47,18 +47,12 @@ async function addLesson(req, res) {
 }
 
 async function all(req, res) {
-  console.log('this is a req body', req.body)
+  //console.log('this is a req body', req.body)
   // req.body contains filter parameters: sortBy and limitNumber which are passed from the jsx
   try {
     let courses = await CourseModel.find(req.body)
-    // if (req.body) {
-    //   courses = courses.sort(req.body)
-    // }
-    // if (req.body.limitNumber) {
-    //   courses = courses.limit(req.body.limitNumber)
-    // }
     res.json(courses)
-    console.log(courses)
+    //console.log(courses)
   } catch (err) {
     console.log('Error encountered: ', err)
     res.status(400).json(err)

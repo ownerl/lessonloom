@@ -1,28 +1,24 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const savedCourseSchema = new Schema({
-    courses: {
-        type: Schema.Types.ObjectId,
-        ref: 'Course'
-    }
-})
-
-const createdCourseSchema = new Schema({
-    courses: {
-        type: Schema.Types.ObjectId,
-        ref: 'Course'
-    }
-})
-
 const userSchema = new Schema(
     {
         name: String,
         googleId: String,
         email: String,
         picture: String,
-        savedCourses: [savedCourseSchema],
-        createdCourses: [createdCourseSchema],
+        savedCourses: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Course'
+            }
+        ],
+        createdCourses: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Course'
+            }
+        ],
         educator: Boolean
     },
     {

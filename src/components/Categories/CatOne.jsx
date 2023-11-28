@@ -12,21 +12,8 @@ export default function CatOne({ category }) {
 
   const [showCourses, setShowCourses] = useState()
 
-  // useEffect(() => {
-  //   let courseList = []
-  //   course.getAllCourses(filter).then((data) => {
-  //     data.forEach((courseInfo) => {
-  //       courseList = [courseList, ...[courseInfo]]
-  //       })})
-  //       const test = courseList.map((courseObject) => {
-  //         return <div>{courseObject.title}</div>
-  //       })
-  //       setShowCourses(test)
-  // }, []);
-
   useEffect(() => {
     let courseList = [];
-  
     course.getAllCourses(filter).then((data) => {
       data.forEach((courseInfo) => {
         courseList.push(courseInfo);
@@ -39,37 +26,6 @@ export default function CatOne({ category }) {
       setShowCourses(test);
     });
   }, []);
-
-  // async function CourseReveal() {
-  //   try {
-  //       const newCourseInfo = await course.getAllCourses(filter)
-  //       console.log('new course info returned from controller: ', newCourseInfo)
-  //   } catch(err) {
-  //     console.log(err)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   CourseReveal()
-  // }, [])
-
-//   useEffect(() => {
-//     setListOfLessons(
-//         courseInfo.lessons?.map((id) => {
-//             return <LessonCard lessonId={id} />;
-//         })
-//     );
-// }, [courseInfo]);
-
-  
-  // useEffect(() => {
-  //   const filteredCourses = async () => {
-  //   await course.getAllCourses().then((data) => {
-  //     setCourses(data)
-  //   })
-  //   console.log(courses)
-  //   } 
-  // }, [])
 
   return(
     <div className="category-box">
