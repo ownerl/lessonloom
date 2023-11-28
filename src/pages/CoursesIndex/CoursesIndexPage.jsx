@@ -66,55 +66,55 @@ export default function CoursesIndexPage() {
 
             <div className={toggle === 2 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatOne />
+                    <CatOne category='JavaScript'/>
                 </div>
             </div>
 
             <div className={toggle === 3 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatTwo />
+                <CatOne category='Nutrition'/>
                 </div>
             </div>
 
             <div className={toggle === 4 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatThree />
+                <CatOne category='Physics'/>
                 </div>
             </div>
 
             <div className={toggle === 5 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatFour />
+                <CatOne category='Painting'/>
                 </div>
             </div>
 
             <div className={toggle === 6 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatFive />
+                <CatOne category='AI'/>
                 </div>
             </div>
 
             <div className={toggle === 7 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatSix />
+                <CatOne category='Business'/>
                 </div>
             </div>
 
             <div className={toggle === 8 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatSeven />
+                <CatOne category='Yoga'/>
                 </div>
             </div>
 
             <div className={toggle === 9 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatEight />
+                <CatOne category='Cooking'/>
                 </div>
             </div>
 
             <div className={toggle === 10 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatNine />
+                <CatOne category='Marketing'/>
                 </div>
             </div>
 
