@@ -13,8 +13,9 @@ import CatNine from '../../components/Categories/CatNine';
 import * as course from '../../utilities/courses-api';
 
 export default function CoursesIndexPage() {
-
+    const courseArr = course.getAllCourses
     const [toggle, setToggle] = useState(1)
+    console.log(courseArr)
 
     function updateToggle(id) {
         setToggle(id)
@@ -40,6 +41,7 @@ export default function CoursesIndexPage() {
                 <div className="other-courses" >
                     <h1>Hot Courses</h1>
                     <div className="course-grid">
+                        
                         <Course />
                         <Course />
                         <Course />
