@@ -14,7 +14,6 @@ export default function CatOne({ category }) {
 
   useEffect(() => {
     let courseList = [];
-  
     course.getAllCourses(filter).then((data) => {
       data.forEach((courseInfo) => {
         courseList.push(courseInfo);
