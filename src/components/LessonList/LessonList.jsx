@@ -3,37 +3,22 @@ import LessonCard from "../LessonCard/LessonCard";
 import { useEffect, useState } from "react";
 import * as course from "../../utilities/courses-api";
 
-export default function LessonList({ courseId }) {
-    const [courseInfo, setCourseInfo] = useState([]);
+export default function LessonList({ courseLessons }) {
+    // const [courseRefresh, setCourseRefresh] = useState(courseLessons)
     const [listOfLessons, setListOfLessons] = useState();
-    useEffect(() => {
-        const fetchCourse = async () => {
-            if (courseId) {
 
-                await course.getCourse(courseId).then((data) => {
-                    setCourseInfo(data);
-                    //console.log("thi shhit is data: ", data);
-                });
-            } else {
-                setCourseInfo([])
-            }
-        };
-        fetchCourse();
-    }, []);
-
+    console.log("course lessons ids passed to lessonlist: ", courseLessons);
     useEffect(() => {
-        setListOfLessons(
-            courseInfo.lessons?.map((id) => {
-                return <LessonCard lessonId={id} />;
+        if (courseLessons) {
+            const lessonArray = courseLessons.map((lesson) => {
+                console.log('single lesson: ', lesson)
+                return <LessonCard lessonInfo={lesson} key={lesson._id}/>
             })
-        );
-    }, [courseInfo]);
+            setListOfLessons(lessonArray);
+        }
+    }, [courseLessons]);
 
-    return (
-        <div className="container-grey">
-            {listOfLessons}
-        </div>
-    );
+    return <div className="container-grey">{listOfLessons}</div>;
 }
 
 // const listOfLessons = async () => {
@@ -43,4 +28,3 @@ export default function LessonList({ courseId }) {
 //     return <p>{lesson}</p>
 //   })
 // }
-

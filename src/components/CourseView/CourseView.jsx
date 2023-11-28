@@ -1,20 +1,24 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./CourseView.css";
-import Button from "../Button/Button";
-import LessonSetUp from "../LessonSetUp/LessonSetUp";
+import edit from "../../img/edit.svg";
 import LessonList from "../LessonList/LessonList";
 import * as course from "../../utilities/courses-api";
+import { UserContext } from "../../pages/App/App";
 
 export default function CourseView() {
+    const navigate = useNavigate();
+    const { user } = useContext(UserContext);
     const location = useLocation();
+    const [resetKey, setResetKey] = useState(0);
     const [courseInfo, setCourseInfo] = useState({
         _id: null,
         title: "",
         description: "",
         bannerImage: null,
+        lessons: [],
+        categories: [],
     });
-    const [courseView, setCourseView] = useState();
 
     useEffect(() => {
         const fetchCourse = async () => {
@@ -23,36 +27,40 @@ export default function CourseView() {
                 console.log("location state! ", location.state);
                 console.log("course info! ", data);
                 console.log(
-                    "course info! ",
+                    "course info! Now with Lessons! ",
                     data.title,
                     data.description,
-                    data.bannerImage
+                    data.lessons
                 );
             });
         };
         fetchCourse();
     }, []);
 
-    useEffect(() => {
-        setCourseView(() => {
-            return (
-                <>
-                    <div className="course-page-intro">
-                        <div className="intro-title">
-                            <h1>{courseInfo ? courseInfo.title : ""}</h1>
-                            <h3>95%</h3>
-                        </div>
-                        <p>{courseInfo ? courseInfo.description : ""}</p>
-                        <img
-                            src={courseInfo ? courseInfo.bannerImage : null}
-                            alt=""
-                        />
-                    </div>
-                    <LessonList courseId={courseInfo ? courseInfo._id : null} />
-                </>
-            );
-        });
-    }, [courseInfo]);
+    function handleEdit() {
+        navigate(`/${courseInfo._id}`, { state: courseInfo });
+    }
 
-    return <div className="coursepage-container">{courseView}</div>;
+    return (
+        <div className="coursepage-container">
+            <>
+                <div className="course-page-intro">
+                    <div className="intro-title">
+                        <h1>{courseInfo ? courseInfo.title : ""}</h1>
+                        <h3>95%</h3>
+                    </div>
+                    <p>{courseInfo ? courseInfo.description : ""}</p>
+                    <img
+                        src={courseInfo ? courseInfo.bannerImage : null}
+                        alt=""
+                    />
+                    {user && <img className="edit" onClick={handleEdit} src={edit} alt="favourite button" />}
+                </div>
+                <LessonList
+                    courseLessons={courseInfo ? courseInfo.lessons : null}
+                />
+            </>
+        </div>
+    );
 }
+
