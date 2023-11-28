@@ -58,13 +58,13 @@ export default function CoursesIndexPage() {
 
             <div className={toggle === 2 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatOne />
+                    <CatOne category='JavaScript'/>
                 </div>
             </div>
 
             <div className={toggle === 3 ? "show-content" : "content"}>
                 <div className="course-grid">
-                    <CatTwo />
+                <CatOne category='Nutrition'/>
                 </div>
             </div>
 

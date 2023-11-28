@@ -50,14 +50,15 @@ async function all(req, res) {
   console.log('this is a req body', req.body)
   // req.body contains filter parameters: sortBy and limitNumber which are passed from the jsx
   try {
-    let courses = await CourseModel.find()
-    if (req.body.sortBy) {
-      courses = courses.sort(req.body.sortBy)
-    }
-    if (req.body.limitNumber) {
-      courses = courses.limit(req.body.limitNumber)
-    }
+    let courses = await CourseModel.find(req.body)
+    // if (req.body) {
+    //   courses = courses.sort(req.body)
+    // }
+    // if (req.body.limitNumber) {
+    //   courses = courses.limit(req.body.limitNumber)
+    // }
     res.json(courses)
+    console.log(courses)
   } catch (err) {
     console.log('Error encountered: ', err)
     res.status(400).json(err)
