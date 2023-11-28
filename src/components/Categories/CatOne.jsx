@@ -73,7 +73,7 @@ export default function CatOne({ category }) {
 
   return(
     <div className="category-box">
-      <h1>Category 1</h1>
+      <h1>{category}</h1>
       {showCourses}
     </div>
   )
