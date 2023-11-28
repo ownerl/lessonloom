@@ -6,7 +6,7 @@ module.exports = {
   show,
   create,
   addLesson,
-  all
+  all,
 }
 
 async function show(req, res) {
@@ -36,30 +36,31 @@ async function create(req, res) {
 async function addLesson(req, res) {
   //console.log('the req body of addLesson course controller: ', req.body._id)
 
-  const filter = { _id: req.params.courseId}
-  const update = {"$push": { "lessons": req.body }}
+  const filter = { _id: req.params.courseId }
+  const update = { $push: { lessons: req.body } }
   const course = await CourseModel.findOneAndUpdate(filter, update, {
-    new: true
-  });
+    new: true,
+  })
   //console.log('the returned res.json course: ', course)
   res.json(course)
   //course.lessons.push()
 }
 
 async function all(req, res) {
-  // req.body contains filter parameters: sortBy and limitNumber which are passed from the jsx 
+  console.log('this is a req body', req.body)
+  // req.body contains filter parameters: sortBy and limitNumber which are passed from the jsx
   try {
-    let courses = await CourseModel.find()
-    if (req.body.sortBy) {
-      courses = courses.sort(req.body.sortBy);
-    }
-    if (req.body.limitNumber) {
-      courses = courses.limit(req.body.limitNumber);
-    }
+    let courses = await CourseModel.find(req.body)
+    // if (req.body) {
+    //   courses = courses.sort(req.body)
+    // }
+    // if (req.body.limitNumber) {
+    //   courses = courses.limit(req.body.limitNumber)
+    // }
     res.json(courses)
+    console.log(courses)
   } catch (err) {
     console.log('Error encountered: ', err)
     res.status(400).json(err)
   }
-
 }
