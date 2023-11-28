@@ -22,7 +22,7 @@ export default function CoursesIndexPage() {
     function updateToggle(id) {
         setToggle(id)
     }
-    const exampleCourseId = "656414ee70c499c1f97fb079"
+    const exampleCourseId = "6566255b05e7a75223288fef"
     return (
         <div className="container">
             <h1>TESTING SHIT</h1>
