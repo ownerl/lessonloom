@@ -1,3 +1,31 @@
-.category-box {
-  background-color: red;
+
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.course {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.7em;
+}
+
+.top{
+  height: 150px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #000;
+  padding: 10px;
+}
+
+.right img {
+  width: 15px;
 }
