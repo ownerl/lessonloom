@@ -8,10 +8,15 @@ export default function LessonList({ courseId }) {
     const [listOfLessons, setListOfLessons] = useState();
     useEffect(() => {
         const fetchCourse = async () => {
-            await course.getCourse(courseId).then((data) => {
-                setCourseInfo(data);
-                //console.log("thi shhit is data: ", data);
-            });
+            if (courseId) {
+
+                await course.getCourse(courseId).then((data) => {
+                    setCourseInfo(data);
+                    //console.log("thi shhit is data: ", data);
+                });
+            } else {
+                setCourseInfo([])
+            }
         };
         fetchCourse();
     }, []);
