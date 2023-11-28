@@ -8,34 +8,21 @@ import * as course from "../../utilities/courses-api";
 
 
 export default function CourseView() {
-    const courseInfo = course.getCourse()
-    const [addLessonVisible, setAddLessonVisible] = useState(true);
-    const [resetKey, setResetKey] = useState(0);
-
+    const location = useLocation();
+    const [courseInfo, setCourseInfo] =  useState(course.getCourse(location.state.courseId))
+    console.log('location state! ', location.state)
     return (
         <div className="coursepage-container">
-            <div className="course-page-intro">
+            {/* <div className="course-page-intro">
                 <div className="intro-title">
                     <h1>{courseInfo ? courseInfo.title : ''}</h1>
-                    <h3>85%</h3>
+                    <h3>95%</h3>
                 </div>
                 <p>{courseInfo ? courseInfo.description : ''}</p>
                 <img src={courseInfo ? courseInfo.bannerImage : null} alt="" />
-            </div>
-            <LessonList key={resetKey} courseId={courseInfo ? courseInfo._id : null} />
-            <Button
-                addLessonVisible={addLessonVisible}
-                setAddLessonVisible={setAddLessonVisible}
-            />
-            {!addLessonVisible && (
-                <LessonSetUp
-                    courseId={courseInfo ? courseInfo._id : null}
-                    addLessonVisible={addLessonVisible}
-                    setAddLessonVisible={setAddLessonVisible}
-                    resetKey={resetKey}
-                    setResetKey={setResetKey}
-                />
-            )}
+            </div> */}
+            {/* <LessonList courseId={courseInfo ? courseInfo._id : null} /> */}
+            
         </div>
     );
 }

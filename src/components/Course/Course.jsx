@@ -2,7 +2,7 @@ import './Course.css'
 import heart from '../../img/Vector.svg'
 import { useNavigate } from 'react-router-dom'
 
-export default function Course({courseInfo}) {
+export default function Course() {
   const navigate = useNavigate()
   return (
     <div className='course' onClick={() => navigate("/adakldjaldksj")}>
