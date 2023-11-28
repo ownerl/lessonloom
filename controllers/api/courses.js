@@ -21,12 +21,13 @@ async function create(req, res) {
   try {
     console.log('inside try block')
     const newCourse = await CourseModel.create({
-      title: req.body.title,
-      description: req.body.description,
-      bannerImage: req.body.bannerImage,
-      categories: req.body.categories,
+      title: req.body.courseInfo.title,
+      description: req.body.courseInfo.description,
+      bannerImage: req.body.courseInfo.bannerImage,
+      creatorId: req.body.user._id,
+      categories: req.body.courseInfo.categories,
     })
-    //console.log('The course (req.body) contains this -> ', newCourse)
+    console.log('The course (req.body) contains this -> ', newCourse)
     res.json(newCourse)
   } catch (err) {
     res.status(400).json(err)

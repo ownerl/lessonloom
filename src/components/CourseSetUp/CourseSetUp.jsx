@@ -1,13 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import * as course from "../../utilities/courses-api";
+import { createdCourses } from "../../utilities/users-api";
 import './CourseSetUp.css'
 import photoUpload from '../../img/gallery 1.png'
 import Select from 'react-select'
 import Gallery from '../../img/gallery 1.png'
+import { UserContext } from "../../pages/App/App";
+
 
 export default function CourseSetUp() {
-
+  const { user } = useContext(UserContext);
   const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [
@@ -82,7 +85,8 @@ function handleChange(evt) {
 async function handleSubmit(evt) {
   evt.preventDefault();
   try {
-      const newCourseInfo = await course.createCourse(courseInfo)
+      const newCourseInfo = await course.createCourse(courseInfo, user);
+      await createdCourses(courseInfo, user);
       console.log('new course info returned from controller: ', newCourseInfo._id)
       navigate(`/${newCourseInfo._id}`, { state: newCourseInfo });
   } catch {

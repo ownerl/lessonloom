@@ -7,8 +7,8 @@ export function getCourse(courseId) {
   return sendRequest(`${BASE_URL}/${courseId}`)
 }
 
-export function createCourse(courseInfo) {
-  return sendRequest(`${BASE_URL}/new`, 'POST', courseInfo)
+export function createCourse(courseInfo, user) {
+  return sendRequest(`${BASE_URL}/new`, 'POST', {courseInfo, user})
 }
 
 export function addLesson(courseId, lessonId) {
