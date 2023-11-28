@@ -8,13 +8,14 @@ import { Link } from 'react-router-dom';
 
 
 export default function CoursesIndexPage() {
-
+    // const filter = {}
+    // const courseArr = course.getAllCourses(filter).then(data => console.log("COURSEARR: " + data))
     const [toggle, setToggle] = useState(1)
 
     function updateToggle(id) {
         setToggle(id)
     }
-    const exampleCourseId = "656414ee70c499c1f97fb079"
+    const exampleCourseId = "6566255b05e7a75223288fef"
     return (
         <div className="container">
             <h1>TESTING SHIT</h1>
