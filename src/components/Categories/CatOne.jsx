@@ -6,9 +6,8 @@ export default function CatOne() {
 
   const [courses, setCourses] = useState([])
 
-  const filter = {
-    sortBy: {categories: {$in: ['JavaScript']}}
-  }
+  const [filter, setFilter] = useState({categories: {$in: ['JavaScript']}})
+  
 
   async function CourseReveal() {
     try {

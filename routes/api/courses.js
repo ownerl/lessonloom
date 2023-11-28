@@ -8,6 +8,6 @@ router.get('/:courseId', courseController.show)
 
 router.post('/:courseId/addLesson', courseController.addLesson)
 
-router.get('/', courseController.all)
+router.post('/', courseController.all)
 
 module.exports = router

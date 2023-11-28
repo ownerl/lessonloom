@@ -11,6 +11,8 @@ import CatSeven from '../../components/Categories/CatSeven';
 import CatEight from '../../components/Categories/CatEight';
 import CatNine from '../../components/Categories/CatNine';
 import * as course from '../../utilities/courses-api';
+import { Link } from 'react-router-dom';
+
 
 export default function CoursesIndexPage() {
 
@@ -19,9 +21,15 @@ export default function CoursesIndexPage() {
     function updateToggle(id) {
         setToggle(id)
     }
-
+    const exampleCourseId = "656414ee70c499c1f97fb079"
     return (
         <div className="container">
+            <h1>TESTING SHIT</h1>
+            <br />
+            <Link to={`/${exampleCourseId}/view`} state={{courseId: exampleCourseId}}>EXAMPLE COURSE VIEW</Link>
+            <br />
+
+            
             <h1>Categories</h1>
             <div className="categories">
                 <div className="cat" onClick={() => updateToggle(1)}>All</div>
