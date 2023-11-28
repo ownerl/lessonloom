@@ -18,13 +18,11 @@ export default function Lesson({ lessonInfo }) {
                     <div className="left">{lessonInfo.title}</div>
                     <div className="right">
                       {user && <img src={edit} alt="favourite button" />}
-                      <Link to={`/lessons/${lessonInfo._id}`} lessonInfo={lessonInfo}>meander to the route in question</Link>
+                      <Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo}}>meander to the route in question</Link>
+                      {/* <Link to={{pathname: `/lessons/${lessonInfo._id}`, state: {lessonInfo}}}>meander to the route in question</Link> */}
                     </div>
                 </div>
             </div>
         );
     }
 }
-
-// link to lesson view page for htis specific lesson
-// <lesson link lessoninfo={lessoninfo} />
