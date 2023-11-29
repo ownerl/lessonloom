@@ -22,8 +22,8 @@ export default function UserProfilePage({user}) {
             <div className='profile-categories'>
                 <div className='profile-cat' onClick={() => updateToggle(1)}>My Courses</div>
                 <div className='profile-cat' onClick={() => updateToggle(2)}>Favourites</div>
-                <div className='profile-cat' onClick={() => updateToggle(3)}>In Progress</div>
-                <div className='profile-cat' onClick={() => updateToggle(4)}>Completed</div>
+                {/* <div className='profile-cat' onClick={() => updateToggle(3)}>In Progress</div>
+                <div className='profile-cat' onClick={() => updateToggle(4)}>Completed</div> */}
             </div>
             <div className={toggle === 1 ? "show-content" : "content"}>
             <div className="profile-course-grid">
@@ -45,7 +45,7 @@ export default function UserProfilePage({user}) {
                 <CourseCard />
             </div>
             </div>
-            <div className={toggle === 3 ? "show-content" : "content"}>
+            {/* <div className={toggle === 3 ? "show-content" : "content"}>
             <div className="profile-course-grid">
                 <CourseCard />
                 <CourseCard />
@@ -54,15 +54,15 @@ export default function UserProfilePage({user}) {
                 <CourseCard />
                 <CourseCard />
             </div>
-            </div>
-            <div className={toggle === 4 ? "show-content" : "content"}>
+            </div> */}
+            {/* <div className={toggle === 4 ? "show-content" : "content"}>
             <div className="profile-course-grid">
                 <CourseCard />
                 <CourseCard />
                 <CourseCard />
                 <CourseCard />
             </div>
-            </div>
+            </div> */}
         </div>
     )
 }
