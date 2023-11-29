@@ -9,7 +9,7 @@ export default function LessonViewPage() {
 	const courseLessons = location.state?.courseLessons
 	const lessonIdx = location.state?.lessonIdx
 	const courseInfo = location.state?.courseInfo
-
+	console.log('courseinfo here: ', courseInfo)
 	const videoUrl = lessonInfo.youTubeLink
 	const playerRef = useRef(null)
 

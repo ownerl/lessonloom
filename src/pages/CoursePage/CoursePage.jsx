@@ -73,6 +73,7 @@ export default function CoursePage() {
         console.log('edit info: ', editInfo)
         await course.updateCourse(courseId, editInfo)
         setEdit(false)
+        navigate(0)
     }
 
     return (
@@ -160,7 +161,7 @@ export default function CoursePage() {
             )}
             <LessonList
                 key={resetKey}
-                courseLessons={courseInfo ? courseInfo.lessons : null}
+                courseInfo={courseInfo ? courseInfo : null}
             />
             <Button
                 addLessonVisible={addLessonVisible}
