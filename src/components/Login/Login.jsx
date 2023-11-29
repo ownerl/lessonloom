@@ -24,17 +24,17 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
         const userData = {
             userInfo: newUser,
             idToken,
-            CLIENT_ID: process.env.REACT_APP_GOOGLE_CLIENT_ID
-        }
-        console.log(newUser.googleId)
+            CLIENT_ID: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+        };
+        console.log(newUser.googleId);
         setUser(newUser);
         loginUser(userData);
-        localStorage.setItem('token', response.credential);
+        localStorage.setItem("token", response.credential);
         setShowNav(true);
     }
 
     useEffect(() => {
-            google.accounts.id.initialize({
+        google.accounts.id.initialize({
             client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
             ux_mode: "popup",
             callback: handleCallbackResponse,
@@ -56,22 +56,20 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
     function onSignOut() {
         setUser(null);
         setShowNav(false);
-        localStorage.removeItem('token');
+        localStorage.clear();
+        // localStorage.removeItem('token');
         google.accounts.id.disableAutoSelect();
-        navigate('/')
+        navigate("/");
     }
 
     return (
         <>
-            {showNav ? (
+            { localStorage.getItem("token") ? 
                 <button id="signOutDiv" onClick={onSignOut}>
                     Sign Out
                 </button>
-            ) : (
-                <>
-                    <div className="googleSignIn" id="signInDiv"></div>
-                </>
-            )}
+            :
+            <div className="googleSignIn" id="signInDiv"></div>}
         </>
     );
 }
