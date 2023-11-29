@@ -1,4 +1,4 @@
-.course {
+.lesson {
   display: grid;
   grid-template-columns: 1fr;
   border: 1px solid #AEAEAE;
@@ -15,10 +15,16 @@
 .bottom {
   display: flex;
   justify-content: space-between;
+  text-align: center;
   border-top: 1px solid #AEAEAE;
   padding: 10px;
 }
 
 .right img {
   width: 15px;
+}
+
+.top img {
+  border: 0;
+  max-width: 162px;
 }

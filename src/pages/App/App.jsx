@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "../../components/Nav/NavBar";
@@ -10,12 +10,16 @@ import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
 import LessonViewPage from "../LessonViewPage/LessonViewPage";
-import "./App.css";/*global google*/
+import "./App.css"; /*global google*/
+import checkToken from "../../utilities/validateToken";
 
 export const UserContext = React.createContext(null);
 
 export default function App() {
     const [user, setUser] = useState(null);
+    useEffect(() => {
+        checkToken(setUser);
+    }, []);
 
     return (
         <div className="App">
