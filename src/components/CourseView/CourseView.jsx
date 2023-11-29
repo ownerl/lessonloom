@@ -69,6 +69,7 @@ export default function CourseView() {
 
                 <LessonList
                     courseLessons={courseInfo ? courseInfo.lessons : null}
+                    courseInfo={courseInfo}
                 />
             </>
         </div>
