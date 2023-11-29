@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './CoursesIndexPage.css'
 import Course from '../../components/Course/Course'
 import CatOne from '../../components/Categories/CatOne';
+import CatAll from '../../components/Categories/CatAll';
 import * as course from '../../utilities/courses-api';
 import { Link } from 'react-router-dom';
 
@@ -38,25 +39,7 @@ export default function CoursesIndexPage() {
             </div>
 
             <div className={toggle === 1 ? "show-content" : "content"}>
-                <div className="other-courses" >
-                    <h1>Hot Courses</h1>
-                    <div className="course-grid">
-                        {/* {courseArr.map(course => (
-                            <Course courseInfo={course}/>
-                        ))} */}
-                        <Course />
-                        <Course />
-                        <Course />
-                        <Course />
-                    </div>
-                    <h1>Most Popular</h1>
-                    <div className="course-grid">
-                        <Course />
-                        <Course />
-                        <Course />
-                        <Course />
-                    </div>
-                </div>
+                <CatAll />
             </div>
 
 

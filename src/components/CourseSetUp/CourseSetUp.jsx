@@ -20,7 +20,7 @@ export default function CourseSetUp() {
     { value: 'Business', label: 'Business' },
     { value: 'Yoga', label: 'Yoga' },
     { value: 'Cooking', label: 'Cooking' },
-    { value: 'marketing', label: 'marketing' }
+    { value: 'Marketing', label: 'Marketing' }
   ]
 
   const [postImage, setPostImage] = useState("")
