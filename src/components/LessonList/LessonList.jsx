@@ -12,7 +12,7 @@ export default function LessonList({ courseLessons }) {
         if (courseLessons) {
             const lessonArray = courseLessons.map((lesson) => {
                 console.log('single lesson: ', lesson)
-                return <LessonCard lessonInfo={lesson} courseLessons={courseLessons} key={lesson._id} idx={courseLessons.indexOf(lesson)}/>
+                return <LessonCard lessonInfo={lesson} courseLessons={courseLessons} key={lesson._id} lessonIdx={courseLessons.indexOf(lesson)}/>
             })
             setListOfLessons(lessonArray);
         }

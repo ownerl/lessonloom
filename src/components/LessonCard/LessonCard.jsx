@@ -4,16 +4,16 @@ import edit from "../../img/edit.svg";
 import { UserContext } from "../../pages/App/App";
 import { Link } from "react-router-dom";
 
-export default function Lesson({ lessonInfo, idx, courseLessons }) {
+export default function Lesson({ lessonInfo, lessonIdx, courseLessons }) {
   const { user } = useContext(UserContext);
     console.log("lesson present: ", lessonInfo);
-    console.log("lesson's index: ", idx)
+    console.log("lesson's index: ", lessonIdx)
     console.log("lesson's parent array: ", courseLessons)
     if (lessonInfo) {
         return (
             <div className="course">
 
-<Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, idx, courseLessons}}>
+<Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>
                 <div className="top">
                     <h1>TESTING</h1>
                 </div>
