@@ -25,10 +25,40 @@
 
 .intro-title {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+    justify-content: flex-end;
+    margin-bottom: 0px;
 }
+
+.course-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.split-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.split-right img {
+    width: 100%;
+}
+
+.split-left input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.split-left textarea {
+    width: 100%;
+}
+
+
+
+
 
 .course-page-content {
     width: 100%;

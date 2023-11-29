@@ -15,13 +15,13 @@ export default function CoursesIndexPage() {
     function updateToggle(id) {
         setToggle(id)
     }
-    const exampleCourseId = "65668035450b8cf4301aad7d"
+    // const exampleCourseId = "65668035450b8cf4301aad7d"
     return (
         <div className="container">
-            <h1>TESTING SHIT</h1>
+            {/* <h1>TESTING SHIT</h1>
             <br />
             <Link to={`/${exampleCourseId}/view`} state={{courseId: exampleCourseId}}>EXAMPLE COURSE VIEW</Link>
-            <br />
+            <br /> */}
 
             
             <h1>Categories</h1>

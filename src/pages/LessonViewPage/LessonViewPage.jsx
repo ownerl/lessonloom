@@ -31,6 +31,7 @@ export default function LessonViewPage() {
 			autoplay: 0,
 		},
 	}
+	console.log(courseLessons)
 	return (
 		<div>
 			<h1>course title & link here</h1>
@@ -40,6 +41,8 @@ export default function LessonViewPage() {
 				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo: courseLessons[lessonIdx + 1], lessonIdx: lessonIdx + 1, courseLessons}}>Next Lesson</Link>}
 			</div>
 
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
+				<h2>{lessonInfo.description}</h2>
 			<div className="youtube">
 				{videoCode ? (
 					<YouTube
@@ -53,10 +56,8 @@ export default function LessonViewPage() {
 					<div></div>
 				)}
 			</div>
-
-			<h2>{lessonInfo.description}</h2>
-			<h2>Post Lesson Task: {lessonInfo.task}</h2>
+			<h1>Post Lesson Task: {lessonInfo.task}</h1>
 			<h2>Notes: {lessonInfo.notes}</h2>
-		</div>
+			</div>
 	)
 }
