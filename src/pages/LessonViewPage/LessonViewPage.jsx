@@ -35,9 +35,9 @@ export default function LessonViewPage() {
 		<div>
 			<h1>course title & link here</h1>
 			<div id="lessonNavBar">
-				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Previous Lesson</Link>}
+				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo: courseLessons[lessonIdx - 1], lessonIdx: lessonIdx -1, courseLessons}}>Previous Lesson</Link>}
 			<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
-				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo: courseLessons[lessonIdx + 1], lessonIdx: lessonIdx + 1, courseLessons}}>Next Lesson</Link>}
 			</div>
 
 			<div className="youtube">
