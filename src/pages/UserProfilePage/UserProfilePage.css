@@ -5,6 +5,13 @@
   margin: auto;
   height: 100%;
   width: 1200px;
+  margin-bottom: 60px;
+}
+
+.user-info {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .photo-container {

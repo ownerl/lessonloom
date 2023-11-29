@@ -15,7 +15,7 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons }) {
 
 <Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>
                 <div className="top">
-                    <h1>TESTING</h1>
+                    <h1>{lessonInfo.title}</h1>
                 </div>
                 <div className="bottom">
                     <div className="left">{lessonInfo.title}</div>

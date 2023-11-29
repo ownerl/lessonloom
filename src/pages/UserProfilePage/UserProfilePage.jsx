@@ -81,8 +81,10 @@ export default function UserProfilePage({ user }) {
                     referrerpolicy="no-referrer"
                 />
             </div>
-            <h3>{user.name}</h3>
-            <h3>{user.email}</h3>
+            <div className="user-info">
+                <h3>{user.name}</h3>
+                <h3>{user.email}</h3>
+            </div>
             {/* <div className="profile-categories">
                 <div className="profile-cat" onClick={() => updateToggle(1)}>
                     My Courses
