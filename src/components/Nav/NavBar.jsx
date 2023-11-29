@@ -13,7 +13,7 @@ export default function NavBar({user, setUser}) {
                     {user && (
                         <>
                             <li className='nav-item'><Link to="/courses/create">Create a Course</Link></li>
-                            <li className='nav-item'><Link to="/user/favorites">Favourites</Link></li>
+                            {/* <li className='nav-item'><Link to="/user/favorites">Favourites</Link></li> */}
                             <li className='nav-item'><Link to="/user">My Profile</Link></li>
                         </>
                     )}

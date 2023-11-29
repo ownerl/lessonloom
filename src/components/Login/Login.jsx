@@ -2,9 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import { jwtDecode } from "jwt-decode";
 import "./Login.css";
 import { loginUser } from "../../utilities/users-api";
+import { useNavigate } from "react-router-dom";
 
 export default function Login({ showNav, setShowNav, user, setUser }) {
     const google = window.google;
+
+    const navigate = useNavigate();
 
     function handleCallbackResponse(response) {
         // google.js <--- callbackresponse will be there
@@ -55,6 +58,7 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
         setShowNav(false);
         localStorage.removeItem('token');
         google.accounts.id.disableAutoSelect();
+        navigate('/')
     }
 
     return (

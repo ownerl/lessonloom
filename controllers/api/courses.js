@@ -7,6 +7,7 @@ module.exports = {
   create,
   addLesson,
   all,
+  update,
 }
 
 async function show(req, res) {
@@ -21,12 +22,13 @@ async function create(req, res) {
   try {
     console.log('inside try block')
     const newCourse = await CourseModel.create({
-      title: req.body.title,
-      description: req.body.description,
-      bannerImage: req.body.bannerImage,
-      categories: req.body.categories,
+      title: req.body.formInfo.title,
+      description: req.body.formInfo.description,
+      bannerImage: req.body.formInfo.bannerImage,
+      creatorId: req.body.user._id,
+      categories: req.body.formInfo.categories,
     })
-    //console.log('The course (req.body) contains this -> ', newCourse)
+    console.log('The course (req.body) contains this -> ', newCourse)
     res.json(newCourse)
   } catch (err) {
     res.status(400).json(err)
@@ -55,6 +57,20 @@ async function all(req, res) {
     //console.log(courses)
   } catch (err) {
     console.log('Error encountered: ', err)
+    res.status(400).json(err)
+  }
+}
+
+async function update(req, res) {
+  console.log('the req.body: ',req.body)
+  try {
+    const filter = { _id: req.params.courseId }
+    const update = { title: req.body.title, description: req.body.description }
+    const course = await CourseModel.findOneAndUpdate(filter, update, {
+      new: true,
+    })
+    res.json(course)
+  } catch(err) {
     res.status(400).json(err)
   }
 }
