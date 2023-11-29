@@ -4,7 +4,7 @@ import edit from "../../img/edit.svg";
 import { UserContext } from "../../pages/App/App";
 import { Link } from "react-router-dom";
 
-export default function Lesson({ lessonInfo, lessonIdx, courseLessons }) {
+export default function Lesson({ lessonInfo, lessonIdx, courseLessons, courseInfo }) {
     const [thumbnail, setThumbnail] = useState("");
     const { user } = useContext(UserContext);
     console.log("lesson present: ", lessonInfo);
@@ -26,10 +26,7 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons }) {
     if (lessonInfo) {
         return (
             <div className="lesson">
-                <Link
-                    to={`/lessons/${lessonInfo._id}`}
-                    state={{ lessonInfo, lessonIdx, courseLessons }}
-                >
+                <Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, lessonIdx, courseLessons, courseInfo}}>
                     <div className="top">
                         <img
                             src={`https://img.youtube.com/vi/${thumbnail}/hqdefault.jpg`}
