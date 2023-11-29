@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './CoursesIndexPage.css'
 import Course from '../../components/Course/Course'
-import CatOne from '../../components/Categories/CatOne';
+import Categories from '../../components/Categories/Categories';
 import * as course from '../../utilities/courses-api';
 import { Link } from 'react-router-dom';
 
@@ -57,39 +57,39 @@ export default function CoursesIndexPage() {
 
 
             <div className={toggle === 2 ? "show-content" : "content"}>
-                    <CatOne category='JavaScript'/>
+                    <Categories category='JavaScript'/>
             </div>
 
             <div className={toggle === 3 ? "show-content" : "content"}>
-                <CatOne category='Nutrition'/>
+                <Categories category='Nutrition'/>
             </div>
 
             <div className={toggle === 4 ? "show-content" : "content"}>
-                <CatOne category='Physics'/>
+                <Categories category='Physics'/>
             </div>
 
             <div className={toggle === 5 ? "show-content" : "content"}>
-                <CatOne category='Painting'/>
+                <Categories category='Painting'/>
             </div>
 
             <div className={toggle === 6 ? "show-content" : "content"}>
-                <CatOne category='AI'/>
+                <Categories category='AI'/>
             </div>
 
             <div className={toggle === 7 ? "show-content" : "content"}>
-                <CatOne category='Business'/>
+                <Categories category='Business'/>
             </div>
 
             <div className={toggle === 8 ? "show-content" : "content"}>
-                <CatOne category='Yoga'/>
+                <Categories category='Yoga'/>
             </div>
 
             <div className={toggle === 9 ? "show-content" : "content"}>
-                <CatOne category='Cooking'/>
+                <Categories category='Cooking'/>
             </div>
 
             <div className={toggle === 10 ? "show-content" : "content"}>
-                <CatOne category='Marketing'/>
+                <Categories category='Marketing'/>
             </div>
 
         </div>

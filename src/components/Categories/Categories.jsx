@@ -3,14 +3,8 @@ import * as course from '../../utilities/courses-api';
 import { useState, useEffect } from 'react';
 import heart from '../../img/Vector.svg'
 
-export default function CatOne({ category }) {
-
-  const [courses, setCourses] = useState([])
-
+export default function Categories({ category }) {
   const [filter, setFilter] = useState({categories: {$in: [`${category}`]}})
-
-  const [newCourseInfo, setNewCourseInfo] = useState([])
-
   const [showCourses, setShowCourses] = useState()
 
   useEffect(() => {
@@ -19,7 +13,6 @@ export default function CatOne({ category }) {
       data.forEach((courseInfo) => {
         courseList.push(courseInfo);
       });
-  
       const test = courseList.map((courseObject) => (
       <div key={courseObject._id} className='course'>
       {/* <div className="top">{courseObject.bannerImage}</div> */}

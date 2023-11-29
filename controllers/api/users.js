@@ -4,14 +4,12 @@ module.exports = {
     login,
     courseCreated,
     courseSaved,
+    coursesArray,
 };
 
 async function login(req, res) {
     if (req.body) {
         const userInfo = req.body.userInfo;
-        console.log("this is req info from login route: ", req.body);
-        console.log("dis da client id: ", req.body.CLIENT_ID);
-        console.log("dis da token id: ", req.body.idToken);
         // A user has logged in with OAuth...
         console.log("before find user");
         console.log("userinfo google stuff: ", userInfo);
@@ -45,10 +43,12 @@ async function courseCreated(req, res) {
         const existingUser = await User.find({
             googleId: req.body.user.googleId,
         })
+        console.log('course info passed in: ', req.body.courseInfo)
+        console.log('got this far in!', existingUser[0], ' and array: ', existingUser[0].name)
         try {
-            existingUser.createdCourse.push(req.body.courseInfo._id)
-            existingUser.save();
-            res.json(existingUser)
+            existingUser[0].createdCourses.push(req.body.courseInfo._id)
+            existingUser[0].save();
+            res.json(existingUser[0])
         } catch(err) {
             res.json(err)
         }
@@ -69,3 +69,13 @@ async function courseSaved(req, res) {
         }
     }
 }
+
+async function coursesArray(req, res) {
+    if (req.body) {
+        const existingUser = await User.find({
+            googleId: req.body.user.googleId,
+        }).populate(`${req.body.filter}`);
+        res.json(existingUser)
+    }
+}
+

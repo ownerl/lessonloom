@@ -12,3 +12,8 @@ export function createdCourses(courseInfo, user) {
 export function savedCourses(courseInfo, user) {
     return sendRequest(`${BASE_URL}/saved`, "POST", {courseInfo, user});
 }
+
+export function coursesArray(filter, user) {
+    return sendRequest(`${BASE_URL}/coursesArray`, "POST", {filter, user});
+}
+
