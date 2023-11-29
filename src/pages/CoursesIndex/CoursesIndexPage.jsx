@@ -32,7 +32,7 @@ export default function CoursesIndexPage() {
                 <div className="cat" onClick={() => updateToggle(4)}>Physics</div>
                 <div className="cat" onClick={() => updateToggle(5)}>Painting</div>
                 <div className="cat" onClick={() => updateToggle(6)}>AI</div>
-                <div className="cat" onClick={() => updateToggle(7)}>Busienss</div>
+                <div className="cat" onClick={() => updateToggle(7)}>Business</div>
                 <div className="cat" onClick={() => updateToggle(8)}>Yoga</div>
                 <div className="cat" onClick={() => updateToggle(9)}>Cooking</div>
                 <div className="cat" onClick={() => updateToggle(10)}>Marketing</div>

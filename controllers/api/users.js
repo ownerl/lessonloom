@@ -72,9 +72,14 @@ async function courseSaved(req, res) {
 
 async function coursesArray(req, res) {
     if (req.body) {
-        const existingUser = await User.find({
+        console.log('req filter: ',req.body.filter)
+        const existingUser = await User.findOne({
             googleId: req.body.user.googleId,
-        }).populate(`${req.body.filter}`);
+        }).populate([{
+            path: `${req.body.filter.filter}`,
+            options: {strictPopulate: false}
+          }]);
+        console.log('createdCourses in controller: ', existingUser.createdCourses)
         res.json(existingUser)
     }
 }
