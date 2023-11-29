@@ -32,14 +32,13 @@ export default function LessonViewPage() {
 		},
 	}
 	return (
-		<div>
-			<h1>course title & link here</h1>
-			<div id="lessonNavBar">
+		<div className="lesson-container">
+			<div className="lesson-grey">
 				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Previous Lesson</Link>}
 			<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
-				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
-			</div>
 
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
+				<h2>{lessonInfo.description}</h2>
 			<div className="youtube">
 				{videoCode ? (
 					<YouTube
@@ -53,10 +52,9 @@ export default function LessonViewPage() {
 					<div></div>
 				)}
 			</div>
-
-			<h2>{lessonInfo.description}</h2>
-			<h2>Post Lesson Task: {lessonInfo.task}</h2>
+			<h1>Post Lesson Task: {lessonInfo.task}</h1>
 			<h2>Notes: {lessonInfo.notes}</h2>
+			</div>
 		</div>
 	)
 }
