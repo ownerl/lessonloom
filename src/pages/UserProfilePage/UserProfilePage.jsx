@@ -83,17 +83,20 @@ export default function UserProfilePage({ user }) {
             </div>
             <h3>{user.name}</h3>
             <h3>{user.email}</h3>
-            <div className="profile-categories">
+            {/* <div className="profile-categories">
                 <div className="profile-cat" onClick={() => updateToggle(1)}>
                     My Courses
                 </div>
                 <div className="profile-cat" onClick={() => updateToggle(2)}>
                     Favourites
                 </div>
-                {/* <div className='profile-cat' onClick={() => updateToggle(3)}>In Progress</div>
-                <div className='profile-cat' onClick={() => updateToggle(4)}>Completed</div> */}
-            </div>
-            <div className={toggle === 1 ? "show-content" : "content"}>
+            </div> */}
+            {/* <div className={toggle === 1 ? "show-content" : "content"}>
+                <div className="profile-course-grid">
+                    {showCourses}
+                </div>
+            </div> */}
+            <div>
                 <div className="profile-course-grid">
                     {showCourses}
                 </div>

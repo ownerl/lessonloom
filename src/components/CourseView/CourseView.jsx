@@ -45,17 +45,28 @@ export default function CourseView() {
         <div className="coursepage-container">
             <>
                 <div className="course-page-intro">
-                    <div className="intro-title">
+                    <div className="course-split">
+                        <div className="split-left">
                         <h1>{courseInfo ? courseInfo.title : ""}</h1>
-                        <h3>95%</h3>
-                    </div>
+                        {/* <h3>95%</h3> */}
                     <p>{courseInfo ? courseInfo.description : ""}</p>
-                    <img
+                    
+                        </div>
+                        <div className="split-right">
+                        <img
                         src={courseInfo ? courseInfo.bannerImage : null}
                         alt=""
                     />
-                    {user && <img className="edit" onClick={handleEdit} src={edit} alt="favourite button" />}
+                        </div>
+                    </div>
+                    <div className="intro-title">
+                    {/* {user && <img className="edit" onClick={handleEdit} src={edit} alt="favourite button" />} */}
+                    {user && <button onClick={handleEdit}>Edit</button>}
+                    </div>
+                    
                 </div>
+
+
                 <LessonList
                     courseLessons={courseInfo ? courseInfo.lessons : null}
                 />

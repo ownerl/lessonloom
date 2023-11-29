@@ -93,9 +93,8 @@ export default function CoursePage() {
             </div> */}
             {edit ? (
                 <div className="course-page-intro">
-                    <div className="intro-title">
-                        <div onClick={handleEdit}>Close</div>
-                        <div onClick={handleSave}>Save</div>
+                    <div className="course-split">
+                        <div className="split-left">
                         <input
                             placeholder="Course Title"
                             type="text"
@@ -104,7 +103,6 @@ export default function CoursePage() {
                             onChange={handleChange}
                             required
                         />
-                    </div>
                     <textarea
                         placeholder="Course Description"
                         type="text"
@@ -113,35 +111,51 @@ export default function CoursePage() {
                         onChange={handleChange}
                         required
                     />
-                    <img
+                        </div>
+                        <div className="split-right">
+                        <img
                         src={courseInfo ? courseInfo.bannerImage : null}
                         alt=""
                     />
-                    <img
+                        </div>
+                    </div>
+
+                    <div className="intro-title">
+                    {/* <img
                         className="backImg"
                         onClick={handleBack}
                         src={back}
                         alt="favourite button"
-                    />
+                    /> */}
+                    <button onClick={handleBack}>Back</button>
+                        <button onClick={handleEdit}>Close</button>
+                        <button onClick={handleSave}>Save</button>
+                    </div>
                 </div>
             ) : (
                 <div className="course-page-intro">
-                    <div onClick={handleEdit}>Edit</div>
-                    <div className="intro-title">
+                    <div className="course-split">
+                        <div className="split-left">
                         <h1>{courseInfo ? courseInfo.title : ""}</h1>
-                        <h3>85%</h3>
-                    </div>
                     <p>{courseInfo ? courseInfo.description : ""}</p>
-                    <img
+                        </div>
+                        <div className="split-right">
+                        <img
                         src={courseInfo ? courseInfo.bannerImage : null}
                         alt=""
                     />
-                    <img
+                        </div>
+                    </div>
+                    <div className="intro-title">
+                    {/* <img
                         className="backImg"
                         onClick={handleBack}
                         src={back}
                         alt="favourite button"
-                    />
+                    /> */}
+                    <button onClick={handleBack}>Back</button>
+                    <button onClick={handleEdit}>Edit</button>
+                    </div>
                 </div>
             )}
             <LessonList
