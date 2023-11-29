@@ -4,7 +4,7 @@ import edit from "../../img/edit.svg";
 import { UserContext } from "../../pages/App/App";
 import { Link } from "react-router-dom";
 
-export default function Lesson({ lessonInfo, lessonIdx, courseLessons }) {
+export default function Lesson({ lessonInfo, lessonIdx, courseLessons, courseInfo }) {
   const { user } = useContext(UserContext);
     console.log("lesson present: ", lessonInfo);
     console.log("lesson's index: ", lessonIdx)
@@ -13,7 +13,7 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons }) {
         return (
             <div className="course">
 
-<Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>
+<Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, lessonIdx, courseLessons, courseInfo}}>
                 <div className="top">
                     <h1>{lessonInfo.title}</h1>
                 </div>
