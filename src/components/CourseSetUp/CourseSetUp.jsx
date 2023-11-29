@@ -22,7 +22,7 @@ export default function CourseSetUp() {
         { value: "Business", label: "Business" },
         { value: "Yoga", label: "Yoga" },
         { value: "Cooking", label: "Cooking" },
-        { value: "marketing", label: "marketing" },
+        { value: "Marketing", label: "Marketing" },
     ];
 
     const [postImage, setPostImage] = useState("");
@@ -87,10 +87,7 @@ export default function CourseSetUp() {
         evt.preventDefault();
         async function createNewCourse() {
             try {
-                const newCourseInfo = await course.createCourse(
-                    formInfo,
-                    user
-                );
+                const newCourseInfo = await course.createCourse(formInfo, user);
                 setCourseInfo({ ...formInfo, _id: newCourseInfo._id });
             } catch {
                 setError("Failed To Create Course");
@@ -100,22 +97,22 @@ export default function CourseSetUp() {
     }
 
     useEffect(() => {
-      console.log('the course info: ', courseInfo)
-      if (courseInfo._id) {
-        async function addCourseToUser() {
-          console.log("courseInfo before addcoursetouser: ", courseInfo);
-          try {
-            const addUserToCourse = await users.createdCourses(
-              courseInfo,
-              user
-              );
-              console.log('after adding course to user')
-            } catch {
-              setError("Failed To Add Course To User");
+        console.log("the course info: ", courseInfo);
+        if (courseInfo._id) {
+            async function addCourseToUser() {
+                console.log("courseInfo before addcoursetouser: ", courseInfo);
+                try {
+                    const addUserToCourse = await users.createdCourses(
+                        courseInfo,
+                        user
+                    );
+                    console.log("after adding course to user");
+                } catch {
+                    setError("Failed To Add Course To User");
+                }
+                navigate(`/${courseInfo._id}`, { state: courseInfo });
             }
-            navigate(`/${courseInfo._id}`, { state: courseInfo });
-          }
-          addCourseToUser();
+            addCourseToUser();
         }
     }, [courseInfo]);
 

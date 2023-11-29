@@ -10,4 +10,6 @@ router.post('/:courseId/addLesson', courseController.addLesson)
 
 router.post('/', courseController.all)
 
+router.put('/:courseId/update', courseController.update)
+
 module.exports = router

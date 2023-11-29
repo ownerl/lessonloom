@@ -22,6 +22,6 @@ module.exports = async function (req, res, next) {
         next();
     } catch (error) {
         console.error("Error verifying token:", error.message);
-        res.status(401).json({ error: "Invalid Google credentials" });
+        return res.status(401).json({ error: "Invalid Google credentials" });
     }
 };

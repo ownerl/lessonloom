@@ -7,6 +7,7 @@ module.exports = {
   create,
   addLesson,
   all,
+  update,
 }
 
 async function show(req, res) {
@@ -56,6 +57,20 @@ async function all(req, res) {
     //console.log(courses)
   } catch (err) {
     console.log('Error encountered: ', err)
+    res.status(400).json(err)
+  }
+}
+
+async function update(req, res) {
+  console.log('the req.body: ',req.body)
+  try {
+    const filter = { _id: req.params.courseId }
+    const update = { title: req.body.title, description: req.body.description }
+    const course = await CourseModel.findOneAndUpdate(filter, update, {
+      new: true,
+    })
+    res.json(course)
+  } catch(err) {
     res.status(400).json(err)
   }
 }
