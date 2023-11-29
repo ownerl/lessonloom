@@ -3,7 +3,7 @@ import LessonCard from "../LessonCard/LessonCard";
 import { useEffect, useState } from "react";
 import * as course from "../../utilities/courses-api";
 
-export default function LessonList({ courseLessons }) {
+export default function LessonList({ courseLessons, courseInfo }) {
     // const [courseRefresh, setCourseRefresh] = useState(courseLessons)
     const [listOfLessons, setListOfLessons] = useState();
 
@@ -12,7 +12,7 @@ export default function LessonList({ courseLessons }) {
         if (courseLessons) {
             const lessonArray = courseLessons.map((lesson) => {
                 console.log('single lesson: ', lesson)
-                return <LessonCard lessonInfo={lesson} courseLessons={courseLessons} key={lesson._id} lessonIdx={courseLessons.indexOf(lesson)}/>
+                return <LessonCard lessonInfo={lesson} courseLessons={courseLessons} key={lesson._id} lessonIdx={courseLessons.indexOf(lesson)} courseInfo={courseInfo}/>
             })
             setListOfLessons(lessonArray);
         }
