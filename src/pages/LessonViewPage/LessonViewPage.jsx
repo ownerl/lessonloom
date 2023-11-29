@@ -31,11 +31,15 @@ export default function LessonViewPage() {
 			autoplay: 0,
 		},
 	}
+	console.log(courseLessons)
 	return (
-		<div className="lesson-container">
-			<div className="lesson-grey">
-				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Previous Lesson</Link>}
+		<div>
+			<h1>course title & link here</h1>
+			<div id="lessonNavBar">
+				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo: courseLessons[lessonIdx - 1], lessonIdx: lessonIdx -1, courseLessons}}>Previous Lesson</Link>}
 			<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo: courseLessons[lessonIdx + 1], lessonIdx: lessonIdx + 1, courseLessons}}>Next Lesson</Link>}
+			</div>
 
 				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
 				<h2>{lessonInfo.description}</h2>
@@ -55,6 +59,5 @@ export default function LessonViewPage() {
 			<h1>Post Lesson Task: {lessonInfo.task}</h1>
 			<h2>Notes: {lessonInfo.notes}</h2>
 			</div>
-		</div>
 	)
 }
