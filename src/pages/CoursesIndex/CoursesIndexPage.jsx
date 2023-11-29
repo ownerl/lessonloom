@@ -16,6 +16,17 @@ export default function CoursesIndexPage() {
         setToggle(id)
     }
     // const exampleCourseId = "65668035450b8cf4301aad7d"
+    const icons = {
+        programming: "../../img/programming-icon.svg",
+        cooking: "../../img/cooking-icon.svg",
+        math: "../../img/math-icon.svg",
+        art: "../../img/art-icon.svg",
+        business: "../../img/business-icon.svg",
+        fitness: "../../img/fitness-icon.svg",
+        language: "../../img/language-icon.svg",
+        diy: "../../img/diy-icon.svg",
+        other: "../../img/other-icon.svg",
+    }
     return (
         <div className="container">
             {/* <h1>TESTING SHIT</h1>
@@ -27,15 +38,15 @@ export default function CoursesIndexPage() {
             <h1>Categories</h1>
             <div className="categories">
                 <div className="cat" onClick={() => updateToggle(1)}>All</div>
-                <div className="cat" onClick={() => updateToggle(2)}>JavaScript</div>
-                <div className="cat" onClick={() => updateToggle(3)}>Nutrition</div>
-                <div className="cat" onClick={() => updateToggle(4)}>Physics</div>
-                <div className="cat" onClick={() => updateToggle(5)}>Painting</div>
-                <div className="cat" onClick={() => updateToggle(6)}>AI</div>
-                <div className="cat" onClick={() => updateToggle(7)}>Business</div>
-                <div className="cat" onClick={() => updateToggle(8)}>Yoga</div>
-                <div className="cat" onClick={() => updateToggle(9)}>Cooking</div>
-                <div className="cat" onClick={() => updateToggle(10)}>Marketing</div>
+                <div className="cat" onClick={() => updateToggle(2)}>Programming</div>
+                <div className="cat" onClick={() => updateToggle(3)}>Cooking & Nutrition</div>
+                <div className="cat" onClick={() => updateToggle(4)}>Math</div>
+                <div className="cat" onClick={() => updateToggle(5)}>Art</div>
+                <div className="cat" onClick={() => updateToggle(6)}>Language</div>
+                <div className="cat" onClick={() => updateToggle(7)}>Business & Marketing</div>
+                <div className="cat" onClick={() => updateToggle(8)}>Health & Fitness</div>
+                <div className="cat" onClick={() => updateToggle(9)}>DIY</div>
+                <div className="cat" onClick={() => updateToggle(10)}>Other</div>
             </div>
 
             <div className={toggle === 1 ? "show-content" : "content"}>
