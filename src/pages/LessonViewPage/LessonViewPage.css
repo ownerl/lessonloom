@@ -45,6 +45,12 @@
   margin-bottom: 30px;
 }
 
+.lesson-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .lesson-buttons button {
   padding: 10px 40px;
