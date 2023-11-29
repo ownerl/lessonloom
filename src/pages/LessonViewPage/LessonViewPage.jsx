@@ -8,11 +8,12 @@ export default function LessonViewPage() {
 	const [lessonInfo, setLessonInfo] = useState(location.state?.lessonInfo)
 	const courseLessons = location.state?.courseLessons
 	const lessonIdx = location.state?.lessonIdx
+	const courseInfo = location.state?.courseInfo
 
 	const videoUrl = lessonInfo.youTubeLink
 	const playerRef = useRef(null)
 
-	console.log(JSON.stringify(lessonInfo))
+	console.log("courseInfo " + JSON.stringify(courseInfo))
 
 	let videoCode
 	try {
@@ -31,13 +32,17 @@ export default function LessonViewPage() {
 			autoplay: 0,
 		},
 	}
+	console.log("courseLessons " + JSON.stringify(courseLessons[1]))
 	return (
-		<div className="lesson-container">
-			<div className="lesson-grey">
-				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Previous Lesson</Link>}
+		<div>
+			<Link to={`/${courseInfo._id}/view`} state={{courseId: courseInfo._id}}>{courseInfo.title}</Link>
+			<div id="lessonNavBar">
+				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonIdx: lessonIdx -1, courseLessons, courseInfo}} onClick={() =>
+	setLessonInfo(courseLessons[lessonIdx - 1])}>Previous Lesson</Link>}
 			<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
-
-				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonIdx: lessonIdx + 1, courseLessons, courseInfo}} onClick={() =>
+	setLessonInfo(courseLessons[lessonIdx + 1])}>Next Lesson</Link>}
+			</div>
 				<h2>{lessonInfo.description}</h2>
 			<div className="youtube">
 				{videoCode ? (
@@ -55,6 +60,5 @@ export default function LessonViewPage() {
 			<h1>Post Lesson Task: {lessonInfo.task}</h1>
 			<h2>Notes: {lessonInfo.notes}</h2>
 			</div>
-		</div>
 	)
 }
