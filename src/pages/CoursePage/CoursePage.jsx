@@ -73,6 +73,7 @@ export default function CoursePage() {
         console.log('edit info: ', editInfo)
         await course.updateCourse(courseId, editInfo)
         setEdit(false)
+        navigate(0)
     }
 
     return (
