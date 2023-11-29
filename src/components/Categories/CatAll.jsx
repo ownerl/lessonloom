@@ -1,12 +1,20 @@
 import './Categories.css'
 import * as course from '../../utilities/courses-api';
 import { useState, useEffect } from 'react';
-import heart from '../../img/Vector.svg'
+import { useNavigate } from "react-router-dom";
+// import heart from '../../img/Vector.svg'
 
 export default function CatAll() {
 
+  const navigate = useNavigate();
+
   // Using
   const [showCourses, setShowCourses] = useState()
+
+  function handleClick(id) {
+    const courseNav = {courseId: id}
+    navigate(`/${id}/view`, { state: courseNav });
+}
 
   useEffect(() => {
     let courseList = [];
@@ -16,7 +24,7 @@ export default function CatAll() {
       });
   
       const test = courseList.map((courseObject) => (
-      <div key={courseObject._id} className='course'>
+      <div key={courseObject._id} className='course' onClick={() => {handleClick(courseObject._id)}}>
       {/* <div className="top">{courseObject.bannerImage}</div> */}
       <div className="top"><img src={courseObject.bannerImage} alt="course-banner" /></div>
       <div className="bottom">
