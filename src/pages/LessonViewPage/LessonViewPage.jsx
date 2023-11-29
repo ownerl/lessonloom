@@ -34,15 +34,11 @@ export default function LessonViewPage() {
 	}
 	console.log("courseLessons " + JSON.stringify(courseLessons[1]))
 	return (
-		<div>
-			<Link to={`/${courseInfo._id}/view`} state={{courseId: courseInfo._id}}>{courseInfo.title}</Link>
-			<div id="lessonNavBar">
-				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonIdx: lessonIdx -1, courseLessons, courseInfo}} onClick={() =>
-	setLessonInfo(courseLessons[lessonIdx - 1])}>Previous Lesson</Link>}
-			<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
-				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonIdx: lessonIdx + 1, courseLessons, courseInfo}} onClick={() =>
-	setLessonInfo(courseLessons[lessonIdx + 1])}>Next Lesson</Link>}
-			</div>
+		<div className="lesson-container">
+			<div className="lesson-grey">
+			<div>
+			<h1>{courseInfo.title}</h1>
+				<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
 				<h2>{lessonInfo.description}</h2>
 			<div className="youtube">
 				{videoCode ? (
@@ -59,6 +55,16 @@ export default function LessonViewPage() {
 			</div>
 			<h1>Post Lesson Task: {lessonInfo.task}</h1>
 			<h2>Notes: {lessonInfo.notes}</h2>
+			<div className="lesson-buttons">
+			<Link to={`/${courseInfo._id}/view`} state={{courseId: courseInfo._id}}><button>Back to Course</button></Link>
+			{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonIdx: lessonIdx -1, courseLessons, courseInfo}} onClick={() =>
+	setLessonInfo(courseLessons[lessonIdx - 1])}><button>Previous Lesson</button></Link>}
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonIdx: lessonIdx + 1, courseLessons, courseInfo}} onClick={() =>
+	setLessonInfo(courseLessons[lessonIdx + 1])}><button>Next Lesson</button></Link>}
+
 			</div>
+			</div>
+			</div>
+		</div>
 	)
 }
