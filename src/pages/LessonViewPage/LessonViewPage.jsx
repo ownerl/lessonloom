@@ -1,9 +1,11 @@
 import {useLocation} from "react-router-dom"
 import {useRef} from "react"
 import YouTube from "react-youtube"
-export default function LessonViewPage({state}) {
+export default function LessonViewPage() {
 	const location = useLocation()
 	const lessonInfo = location.state?.lessonInfo
+	const courseLessons = location.state?.courseLessons
+	const lessonIdx = location.state?.idx
 
 	const videoUrl = lessonInfo.youTubeLink
 	const playerRef = useRef(null)
@@ -24,8 +26,6 @@ export default function LessonViewPage({state}) {
 			autoplay: 0,
 		},
 	}
-	console.log("lessonInfo: " + lessonInfo._id)
-	console.log("state: " + location.state)
 	return (
 		<div>
 			<h1>course title & link here</h1>
