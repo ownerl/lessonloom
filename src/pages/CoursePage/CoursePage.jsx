@@ -161,7 +161,7 @@ export default function CoursePage() {
             )}
             <LessonList
                 key={resetKey}
-                courseLessons={courseInfo ? courseInfo.lessons : null}
+                courseInfo={courseInfo ? courseInfo : null}
             />
             <Button
                 addLessonVisible={addLessonVisible}
