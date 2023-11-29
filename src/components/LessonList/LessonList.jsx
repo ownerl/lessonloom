@@ -12,11 +12,13 @@ export default function LessonList({ courseLessons }) {
         if (courseLessons) {
             const lessonArray = courseLessons.map((lesson) => {
                 console.log('single lesson: ', lesson)
-                return <LessonCard lessonInfo={lesson} key={lesson._id}/>
+                return <LessonCard lessonInfo={lesson} courseLessons={courseLessons} key={lesson._id} lessonIdx={courseLessons.indexOf(lesson)}/>
             })
             setListOfLessons(lessonArray);
         }
     }, [courseLessons]);
+    console.log("listOfLessons: " + listOfLessons)
+    console.log("courseLessons:" + courseLessons)
 
     return <div className="container-grey">{listOfLessons}</div>;
 }

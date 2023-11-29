@@ -1,12 +1,18 @@
-import {useLocation} from "react-router-dom"
-import {useRef} from "react"
+import {Link, useLocation} from "react-router-dom"
+import {useRef, useState} from "react"
 import YouTube from "react-youtube"
-export default function LessonViewPage({state}) {
+
+import "./LessonViewPage.css"
+export default function LessonViewPage() {
 	const location = useLocation()
-	const lessonInfo = location.state?.lessonInfo
+	const [lessonInfo, setLessonInfo] = useState(location.state?.lessonInfo)
+	const courseLessons = location.state?.courseLessons
+	const lessonIdx = location.state?.lessonIdx
 
 	const videoUrl = lessonInfo.youTubeLink
 	const playerRef = useRef(null)
+
+	console.log(JSON.stringify(lessonInfo))
 
 	let videoCode
 	try {
@@ -17,19 +23,22 @@ export default function LessonViewPage({state}) {
 		console.log(err)
 	}
 	const opts = {
-		height: "230",
-		width: "487",
+		height: "236px",
+		width: "420",
+		// ====================================================== MAKE THIS RESPONSIVE !!! ================================================ ALSO FIGURE OUT WHY TEXT INTERSECTS AT LARGER SCREEN SIZES
 		playerVars: {
 			// https://developers.google.com/youtube/player_parameters
 			autoplay: 0,
 		},
 	}
-	console.log("lessonInfo: " + lessonInfo._id)
-	console.log("state: " + location.state)
 	return (
 		<div>
 			<h1>course title & link here</h1>
-			<h1>LESSON (INSERT): {lessonInfo.title}</h1>
+			<div id="lessonNavBar">
+				{lessonIdx > 0 && <Link to={`/lessons/${courseLessons[lessonIdx - 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Previous Lesson</Link>}
+			<h1>LESSON {lessonIdx + 1}: {lessonInfo.title.toUpperCase()}</h1>
+				{lessonIdx < courseLessons.length - 1 && <Link to={`/lessons/${courseLessons[lessonIdx + 1]._id}`} state={{lessonInfo, lessonIdx, courseLessons}}>Next Lesson</Link>}
+			</div>
 
 			<div className="youtube">
 				{videoCode ? (
