@@ -3,10 +3,10 @@ import LessonCard from "../LessonCard/LessonCard";
 import { useEffect, useState } from "react";
 import * as course from "../../utilities/courses-api";
 
-export default function LessonList({ courseLessons, courseInfo }) {
+export default function LessonList({ courseInfo }) {
     // const [courseRefresh, setCourseRefresh] = useState(courseLessons)
     const [listOfLessons, setListOfLessons] = useState();
-
+    const courseLessons = courseInfo.lessons;
     console.log("course lessons ids passed to lessonlist: ", courseLessons);
     useEffect(() => {
         if (courseLessons) {

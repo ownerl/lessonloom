@@ -10,7 +10,7 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons, courseInf
     console.log("lesson present: ", lessonInfo);
     console.log("lesson's index: ", lessonIdx);
     console.log("lesson's parent array: ", courseLessons);
-
+    console.log("courseinfo in lessoncard: ", courseInfo)
     useEffect(() => {
         try {
             if (lessonInfo.youTubeLink) {
@@ -37,7 +37,6 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons, courseInf
                         <div className="left">{lessonInfo.title}</div>
                         {user && (
                             <div className="right">
-                                <img src={edit} alt="favourite button" />
                             </div>
                         )}
                     </div>
