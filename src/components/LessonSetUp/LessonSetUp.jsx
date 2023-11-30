@@ -1,6 +1,6 @@
+import "./LessonSetUp.css";
 import { useRef, useState } from "react";
 import YouTube from "react-youtube";
-import "./LessonSetUp.css";
 import * as lesson from "../../utilities/lesson-api";
 import * as course from "../../utilities/courses-api";
 
@@ -13,6 +13,9 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
         notes: "",
     });
     const [error, setError] = useState("");
+    const [videoUrl, setVideoUrl] = useState("");
+    const [isPlaying, setIsPlaying] = useState(false);
+    const playerRef = useRef(null);
 
     function handleChange(evt) {
         setLessonInfo({ ...lessonInfo, [evt.target.name]: evt.target.value });
@@ -25,18 +28,12 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
             setAddLessonVisible(!addLessonVisible);
             const newLesson = await lesson.createLesson(lessonInfo);
             const addedLessonToCourse = await course.addLesson(courseId, newLesson);
-            //console.log('the return after addlessontocourse controller executes:  ', addedLessonToCourse)
             setLessonInfo({})
-            // the below line triggers refresh of LessonList element
             setResetKey(resetKey + 1);
         } catch {
             setError("Failed To Create lesson");
         }
     }
-
-    const [videoUrl, setVideoUrl] = useState("");
-    const [isPlaying, setIsPlaying] = useState(false);
-    const playerRef = useRef(null);
 
     let videoCode;
     try {
@@ -46,11 +43,11 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
     } catch (err) {
         console.log(err);
     }
+
     const opts = {
         height: "230",
         width: "487",
         playerVars: {
-            // https://developers.google.com/youtube/player_parameters
             autoplay: 0,
         },
     };

@@ -20,4 +20,5 @@ export default function checkToken(setUser) {
         setUser(newUser);
         loginUser(userData);
     }
+    return
 }

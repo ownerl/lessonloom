@@ -1,19 +1,16 @@
+import "./LessonViewPage.css"
 import {Link, useLocation} from "react-router-dom"
 import {useRef, useState} from "react"
 import YouTube from "react-youtube"
 
-import "./LessonViewPage.css"
 export default function LessonViewPage() {
 	const location = useLocation()
 	const [lessonInfo, setLessonInfo] = useState(location.state?.lessonInfo)
 	const courseLessons = location.state?.courseLessons
 	const lessonIdx = location.state?.lessonIdx
 	const courseInfo = location.state?.courseInfo
-	console.log('courseinfo here: ', courseInfo)
 	const videoUrl = lessonInfo.youTubeLink
 	const playerRef = useRef(null)
-
-	console.log("courseInfo " + JSON.stringify(courseInfo))
 
 	let videoCode
 	try {
@@ -23,6 +20,7 @@ export default function LessonViewPage() {
 	} catch (err) {
 		console.log(err)
 	}
+	
 	const opts = {
 		height: "236px",
 		width: "420",
@@ -32,7 +30,7 @@ export default function LessonViewPage() {
 			autoplay: 0,
 		},
 	}
-	console.log("courseLessons " + JSON.stringify(courseLessons[1]))
+	
 	return (
 		<div className="lesson-container">
 			<div className="lesson-grey">
