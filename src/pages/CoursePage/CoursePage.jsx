@@ -107,9 +107,15 @@ export default function CoursePage() {
                     </div>
 
                     <div className="intro-title">
-                    <button onClick={handleBack}>Back</button>
-                        <button onClick={handleEdit}>Close</button>
-                        <button onClick={handleSave}>Save</button>
+                    {/* <img
+                        className="backImg"
+                        onClick={handleBack}
+                        src={back}
+                        alt="favourite button"
+                    /> */}
+                    <button className="back" onClick={handleBack}>Back</button>
+                        <button className="close" onClick={handleEdit}>Close</button>
+                        <button className="save" onClick={handleSave}>Save</button>
                     </div>
                 </div>
             ) : (
@@ -127,8 +133,14 @@ export default function CoursePage() {
                         </div>
                     </div>
                     <div className="intro-title">
-                    <button onClick={handleBack}>Back</button>
-                    <button onClick={handleEdit}>Edit</button>
+                    {/* <img
+                        className="backImg"
+                        onClick={handleBack}
+                        src={back}
+                        alt="favourite button"
+                    /> */}
+                    <button className="back" onClick={handleBack}>Back</button>
+                    <button className="edit" onClick={handleEdit}>Edit</button>
                     </div>
                 </div>
             )}
