@@ -18,8 +18,8 @@ export default function CoursesIndexPage() {
 		Language: "/language-icon.svg",
 		"Business & Marketing": "/business-icon.svg",
 		"Health & Fitness": "/fitness-icon.svg",
-		DIY: "/img/diy-icon.svg",
-		Other: "/img/other-icon.svg",
+		DIY: "/diy-icon.svg",
+		Other: "/other-icon.svg",
 	}
 
 	return (
