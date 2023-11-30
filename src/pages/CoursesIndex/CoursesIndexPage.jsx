@@ -58,34 +58,34 @@ export default function CoursesIndexPage() {
                 </div>
             </div>
             <div className={toggle === 1 ? "show-content" : "content"}>
-                <CatAll icons={icons}/>
+                <CatAll icons={icons} />
             </div>
             <div className={toggle === 2 ? "show-content" : "content"}>
-                <Categories category="Programming" icons={icons}/>
+                <Categories category="Programming" icons={icons} />
             </div>
             <div className={toggle === 3 ? "show-content" : "content"}>
-                <Categories category="Cooking & Nutrition" icons={icons}/>
+                <Categories category="Cooking & Nutrition" icons={icons} />
             </div>
             <div className={toggle === 4 ? "show-content" : "content"}>
-                <Categories category="Math" icons={icons}/>
+                <Categories category="Math" icons={icons} />
             </div>
             <div className={toggle === 5 ? "show-content" : "content"}>
-                <Categories category="Art" icons={icons}/>
+                <Categories category="Art" icons={icons} />
             </div>
             <div className={toggle === 6 ? "show-content" : "content"}>
                 <Categories category="Language" />
             </div>
             <div className={toggle === 7 ? "show-content" : "content"}>
-                <Categories category="Business & Marketing" icons={icons}/>
+                <Categories category="Business & Marketing" icons={icons} />
             </div>
             <div className={toggle === 8 ? "show-content" : "content"}>
-                <Categories category="Health & Fitness" icons={icons}/>
+                <Categories category="Health & Fitness" icons={icons} />
             </div>
             <div className={toggle === 9 ? "show-content" : "content"}>
-                <Categories category="DIY" icons={icons}/>
+                <Categories category="DIY" icons={icons} />
             </div>
             <div className={toggle === 10 ? "show-content" : "content"}>
-                <Categories category="Other" icons={icons}/>
+                <Categories category="Other" icons={icons} />
             </div>
         </div>
     );
