@@ -38,7 +38,6 @@ export default function CatAll() {
                         handleClick(courseObject._id);
                     }}
                 >
-                    {/* <div className="top">{courseObject.bannerImage}</div> */}
                     <div className="top">
                         <img
                             src={courseObject.bannerImage}
@@ -47,10 +46,6 @@ export default function CatAll() {
                     </div>
                     <div className="bottom">
                         <div className="left">{courseObject.title}</div>
-                        {/* <div className="right"><img src={heart} alt ="favourite button"/></div> */}
-                        {/* <div className="right"><span class="icon icon-heart"></span></div> */}
-
-                        {console.log(icons[courseObject.categories[0]])}
                         <div className="right">
                             <span
                                 class="icon icon-heart"
@@ -64,7 +59,6 @@ export default function CatAll() {
                     </div>
                 </div>
             ));
-
             setShowCourses(test);
         });
     }, []);
