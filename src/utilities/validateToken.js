@@ -16,7 +16,6 @@ export default function checkToken(setUser) {
             idToken: token,
             CLIENT_ID: process.env.REACT_APP_GOOGLE_CLIENT_ID
         }
-        console.log(newUser.googleId)
         setUser(newUser);
         loginUser(userData);
     }

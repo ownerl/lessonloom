@@ -54,8 +54,6 @@ export default function LessonViewPage() {
 					<YouTube
 						videoId={videoCode}
 						opts={opts}
-						onPause={() => console.log("Paused!")}
-						onPlay={() => console.log("Playing!")}
 						onReady={(e) => (playerRef.current = e.target)}
 					/>
 				) : (

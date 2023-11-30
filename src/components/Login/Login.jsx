@@ -10,9 +10,7 @@ export default function Login({ resetKey, setResetKey, showNav, setShowNav, setU
 
     function handleCallbackResponse(response) {
         const idToken = response.credential;
-        console.log("encoded jwt id token: ", response.credential);
         const userObject = jwtDecode(response.credential);
-        console.log(userObject);
         const newUser = {
             name: userObject.name,
             email: userObject.email,
@@ -25,8 +23,6 @@ export default function Login({ resetKey, setResetKey, showNav, setShowNav, setU
             CLIENT_ID: process.env.REACT_APP_GOOGLE_CLIENT_ID,
         };
         localStorage.setItem("token", response.credential);
-        console.log("dis da user data: ", userData);
-        console.log(newUser.googleId);
         setUser(newUser);
         loginUser(userData);
         setShowNav(true);
