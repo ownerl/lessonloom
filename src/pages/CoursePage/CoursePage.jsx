@@ -31,14 +31,6 @@ export default function CoursePage() {
             console.log("course info in useffect: ", location.state);
             await course.getCourse(location.state._id).then((data) => {
                 setCourseInfo(data);
-                console.log("location state! ", location.state);
-                console.log("course info! ", data);
-                console.log(
-                    "course info! Now with Lessons! ",
-                    data.title,
-                    data.description,
-                    data.lessons
-                );
             });
         };
         fetchCourse();
@@ -59,8 +51,6 @@ export default function CoursePage() {
 
     function handleChange(evt) {
         setEditInfo({ ...editInfo, [evt.target.name]: evt.target.value });
-        console.log(evt.target.name);
-        console.log(evt.target.value);
     }
 
     function handleEdit() {
@@ -69,7 +59,6 @@ export default function CoursePage() {
 
     async function handleSave() {
         const courseId = location.state._id
-        console.log('edit info: ', editInfo)
         await course.updateCourse(courseId, editInfo)
         setEdit(false)
         navigate(0)
@@ -107,12 +96,6 @@ export default function CoursePage() {
                     </div>
 
                     <div className="intro-title">
-                    {/* <img
-                        className="backImg"
-                        onClick={handleBack}
-                        src={back}
-                        alt="favourite button"
-                    /> */}
                     <button className="back" onClick={handleBack}>Back</button>
                         <button className="close" onClick={handleEdit}>Close</button>
                         <button className="save" onClick={handleSave}>Save</button>
@@ -133,12 +116,6 @@ export default function CoursePage() {
                         </div>
                     </div>
                     <div className="intro-title">
-                    {/* <img
-                        className="backImg"
-                        onClick={handleBack}
-                        src={back}
-                        alt="favourite button"
-                    /> */}
                     <button className="back" onClick={handleBack}>Back</button>
                     <button className="edit" onClick={handleEdit}>Edit</button>
                     </div>
