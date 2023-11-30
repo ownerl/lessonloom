@@ -27,16 +27,15 @@ export default function CourseEdit() {
     <div className="bottom-row">
       <h3>Choose up to 3 categories</h3>
       <div className="categories">
-                <div className="cat">Photography</div>
-                <div className="cat">JavaScript</div>
-                <div className="cat">Nutrition</div>
-                <div className="cat">Physics</div>
-                <div className="cat">Painting</div>
-                <div className="cat">AI</div>
-                <div className="cat">Busienss</div>
-                <div className="cat">Yoga</div>
-                <div className="cat">Cooking</div>
-                <div className="cat">Marketing</div>
+                <div className="cat">Programming</div>
+                <div className="cat">Cooking & Nutrition</div>
+                <div className="cat">Math</div>
+                <div className="cat">Art</div>
+                <div className="cat">Business & Marketing</div>
+                <div className="cat">Health & Fitness</div>
+                <div className="cat">Language</div>
+                <div className="cat">DIY</div>
+                <div className="cat">Other</div>
             </div>
     </div>
 </form>
