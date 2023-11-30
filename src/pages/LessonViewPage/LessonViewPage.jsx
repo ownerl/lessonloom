@@ -1,8 +1,8 @@
+import "./LessonViewPage.css"
 import {Link, useLocation} from "react-router-dom"
 import {useRef, useState} from "react"
 import YouTube from "react-youtube"
 
-import "./LessonViewPage.css"
 export default function LessonViewPage() {
 	const location = useLocation()
 	const [lessonInfo, setLessonInfo] = useState(location.state?.lessonInfo)
