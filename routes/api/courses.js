@@ -1,15 +1,15 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
-const courseController = require('../../controllers/api/courses')
+const courseController = require("../../controllers/api/courses")
 
-router.post('/new', courseController.create)
+router.post("/new", courseController.create)
 
-router.get('/:courseId', courseController.show)
+router.get("/:courseId", courseController.show)
 
-router.post('/:courseId/addLesson', courseController.addLesson)
+router.post("/:courseId/addLesson", courseController.addLesson)
 
-router.post('/', courseController.all)
+router.post("/", courseController.all)
 
-router.put('/:courseId/update', courseController.update)
+router.put("/:courseId/update", courseController.update)
 
 module.exports = router

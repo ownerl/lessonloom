@@ -1,13 +1,12 @@
-import './CreateCoursePage.css'
-import CourseSetUp from '../../components/CourseSetUp/CourseSetUp'
+import "./CreateCoursePage.css"
+import CourseSetUp from "../../components/CourseSetUp/CourseSetUp"
 
 export default function CreateCoursePage() {
-    
-    return (
-        <main>
-            <div className="container">
-                <CourseSetUp />
-            </div>
-        </main>
-    );
+	return (
+		<main>
+			<div className="container">
+				<CourseSetUp />
+			</div>
+		</main>
+	)
 }
