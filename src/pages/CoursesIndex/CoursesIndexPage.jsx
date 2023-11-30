@@ -10,6 +10,18 @@ export default function CoursesIndexPage() {
         setToggle(id);
     }
 
+    const icons = {
+        Programming: "/programming-icon.svg",
+        "Cooking & Nutrition": "/cooking-icon.svg",
+        Math: "/math-icon.svg",
+        Art: "/art-icon.svg",
+        Language: "/business-icon.svg",
+        "Business & Marketing": "/fitness-icon.svg",
+        "Health & Fitness": "/language-icon.svg",
+        DIY: "/img/diy-icon.svg",
+        Other: "/img/other-icon.svg",
+    };
+
     return (
         <div className="container">
             <h1>Categories</h1>
@@ -46,34 +58,34 @@ export default function CoursesIndexPage() {
                 </div>
             </div>
             <div className={toggle === 1 ? "show-content" : "content"}>
-                <CatAll />
+                <CatAll icons={icons}/>
             </div>
             <div className={toggle === 2 ? "show-content" : "content"}>
-                <Categories category="Programming" />
+                <Categories category="Programming" icons={icons}/>
             </div>
             <div className={toggle === 3 ? "show-content" : "content"}>
-                <Categories category="Cooking & Nutrition" />
+                <Categories category="Cooking & Nutrition" icons={icons}/>
             </div>
             <div className={toggle === 4 ? "show-content" : "content"}>
-                <Categories category="Math" />
+                <Categories category="Math" icons={icons}/>
             </div>
             <div className={toggle === 5 ? "show-content" : "content"}>
-                <Categories category="Art" />
+                <Categories category="Art" icons={icons}/>
             </div>
             <div className={toggle === 6 ? "show-content" : "content"}>
                 <Categories category="Language" />
             </div>
             <div className={toggle === 7 ? "show-content" : "content"}>
-                <Categories category="Business & Marketing" />
+                <Categories category="Business & Marketing" icons={icons}/>
             </div>
             <div className={toggle === 8 ? "show-content" : "content"}>
-                <Categories category="Health & Fitness" />
+                <Categories category="Health & Fitness" icons={icons}/>
             </div>
             <div className={toggle === 9 ? "show-content" : "content"}>
-                <Categories category="DIY" />
+                <Categories category="DIY" icons={icons}/>
             </div>
             <div className={toggle === 10 ? "show-content" : "content"}>
-                <Categories category="Other" />
+                <Categories category="Other" icons={icons}/>
             </div>
         </div>
     );

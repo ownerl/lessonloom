@@ -1,10 +1,9 @@
 import './Categories.css'
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import heart from '../../img/Vector.svg'
 import * as course from '../../utilities/courses-api';
 
-export default function CatOne({ category }) {
+export default function CatOne({ category, icons }) {
   const navigate = useNavigate();
   const [filter, setFilter] = useState({categories: {$in: [`${category}`]}})
   const [showCourses, setShowCourses] = useState()
@@ -25,7 +24,7 @@ export default function CatOne({ category }) {
       <div className="top"><img src={courseObject.bannerImage} alt="course-banner" /></div>
       <div className="bottom">
       <div className="left">{courseObject.title}</div>
-      <div className="right"><img src={heart} alt ="favourite button"/></div>
+      <div className="right"><img src={icons[category]} alt={category}/></div>
       </div>
       </div>
       ));

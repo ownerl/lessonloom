@@ -3,20 +3,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as course from "../../utilities/courses-api";
 
-export default function CatAll() {
+export default function CatAll({icons}) {
     const navigate = useNavigate();
     const [showCourses, setShowCourses] = useState();
-    const icons = {
-        Programming: "/programming-icon.svg",
-        "Cooking & Nutrition": "/cooking-icon.svg",
-        Math: "/math-icon.svg",
-        Art: "/art-icon.svg",
-        Language: "/business-icon.svg",
-        "Business & Marketing": "/fitness-icon.svg",
-        "Health & Fitness": "/language-icon.svg",
-        DIY: "/img/diy-icon.svg",
-        Other: "/img/other-icon.svg",
-    };
 
     function handleClick(id) {
         const courseNav = { courseId: id };
@@ -60,7 +49,7 @@ export default function CatAll() {
 
     return (
         <>
-            <h1 style={{ backgroundImage: "url(../../img/cooking-icon.svg" }}>
+            <h1>
                 All
             </h1>
             <div className="course-grid">{showCourses}</div>
