@@ -33,36 +33,48 @@ export default function UserProfilePage({ user }) {
 
     useEffect(() => {
         let courseList = [];
-        coursesArray({ filter: "createdCourses" }, user).then((data) => {
-            data.createdCourses.forEach((courseInfo) => {
-                courseList.push(courseInfo);
+        try {
+            coursesArray({ filter: "createdCourses" }, user).then((data) => {
+                data.createdCourses.forEach((courseInfo) => {
+                    courseList.push(courseInfo);
+                });
+                const test = courseList.map((courseObject) => (
+                    <div
+                        key={courseObject._id}
+                        className="course"
+                        onClick={() => {
+                            handleClick(courseObject._id);
+                        }}
+                    >
+                        <div className="top">
+                            <img
+                                src={courseObject.bannerImage}
+                                alt="course-banner"
+                            />
+                        </div>
+                        <div className="bottom">
+                            <div className="left">{courseObject.title}</div>
+                            <div className="right">
+                                <div className="image-container">
+                                    <img
+                                        src={`${
+                                            icons[courseObject.categories[0]]
+                                        }`}
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ));
+                setShowCourses(test);
             });
-            const test = courseList.map((courseObject) => (
-                <div
-                    key={courseObject._id}
-                    className="course"
-                    onClick={() => {
-                        handleClick(courseObject._id);
-                    }}
-                >
-                    <div className="top">
-                        <img
-                            src={courseObject.bannerImage}
-                            alt="course-banner"
-                        />
-                    </div>
-                    <div className="bottom">
-                        <div className="left">{courseObject.title}</div>
-                        <div className="right">
-                        <div className="image-container">
-                            <img src={`${icons[courseObject.categories[0]]}`} alt="" />
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            ));
-            setShowCourses(test)
-        });
+        } catch (err) {
+            console.log(
+                "Error occured while fetching user created courses",
+                err
+            );
+        }
     }, []);
 
     function handleClick(id) {
