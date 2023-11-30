@@ -9,6 +9,17 @@ nav {
     justify-content: space-between;
 }
 
+.lessonloom-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lessonloom-logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
