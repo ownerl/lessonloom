@@ -24,7 +24,7 @@ export default function CatOne({ category, icons }) {
       <div className="top"><img src={courseObject.bannerImage} alt="course-banner" /></div>
       <div className="bottom">
       <div className="left">{courseObject.title}</div>
-      <div className="right"><img src={icons[category]} alt={category}/></div>
+      <div className="right"><img class="icon" src={icons[category]} alt={category}/></div>
       </div>
       </div>
       ));

@@ -37,7 +37,7 @@ export default function CatAll({icons}) {
                         <div className="left">{courseObject.title}</div>
                         <div className="right">
                         <div className="image-container">
-                            <img src={`${icons[courseObject.categories[0]]}`} alt="" />
+                            <img class="icon" src={`${icons[courseObject.categories[0]]}`} alt="" />
                         </div>
                         </div>
                     </div>

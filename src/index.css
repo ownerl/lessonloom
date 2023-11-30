@@ -34,6 +34,10 @@ h1 {
   margin: 30px 0px;
 }
 
+.icon{
+  aspect-ratio: 1;
+}
+
 
 
 /* KEEP THESE STYLES INCASE WE WANT TO REFFERENCE THEM */
