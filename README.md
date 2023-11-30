@@ -1,6 +1,30 @@
 # LessonLoom
 
-LessonLoom is an open source MERN stack application designed as a platform for students and educators to plan and consume curated lessons. Lessons can be arranged as a series of YouTube videos from one or more creators, which can then be viewed by students.
+LessonLoom is an open source MERN stack application designed as a platform for students and educators to plan and consume curated lessons. Lessons can be arranged as a series of YouTube videos from one or more creators, which can then be viewed by anyone.
+
+## Tech Stack
+### Languages
+- HTML
+- CSS
+- JavaScript
+### Libraries/Frameworks
+- Node.js: [https://nodejs.org/en](https://nodejs.org/en)
+- Express.js: [https://expressjs.com/](https://expressjs.com/)
+- React.js: https://react.dev/
+- MongoDB: [https://www.mongodb.com/](https://www.mongodb.com/)
+- Mongoose: [https://mongoosejs.com/](https://mongoosejs.com/)
+### APIs
+- Google API: [https://developers.google.com/identity](https://developers.google.com/identity)
+- YouTube API: [https://developers.google.com/youtube/](https://developers.google.com/youtube/)
+### Software
+- VSCode: https://code.visualstudio.com/
+- VSCodium: https://vscodium.com/
+- LucidApp: https://lucid.app/
+- Miro: https://miro.com/
+- Figma: https://www.figma.com/
+- Slack: https://slack.com/
+- Zoom: https://zoom.us/
+# Project Planning 
 
 ## Technologies Used:
 ### Languages:
@@ -13,7 +37,6 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 - React.js: https://react.dev/
 - MongoDB: [https://www.mongodb.com/](https://www.mongodb.com/)
 - Mongoose: [https://mongoosejs.com/](https://mongoosejs.com/)
-- OAuth: [https://oauth.net/](https://oauth.net/)
 ### APIs:
 - Google IFrame: [https://developers.google.com/youtube/iframe_api_reference/](https://developers.google.com/youtube/iframe_api_reference)
 ### Software:
@@ -21,6 +44,17 @@ LessonLoom is an open source MERN stack application designed as a platform for s
 - VSCodium: https://vscodium.com/
 - Miro: https://miro.com/
 - LucidApp: https://lucid.app/
+
+## Features
+- Login with Google
+- Create courses
+- Add lessons to courses
+- Embbed YouTube links into lessons
+- Store all course and lesson information in database
+- Retrieve all course and lesson information in database
+- Sort by category
+- Access courses and lessons
+- Conditional creator view of courses
 
 ## User View Wireframes
 ### Home Screen:
