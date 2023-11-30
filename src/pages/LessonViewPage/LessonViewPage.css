@@ -1,9 +1,3 @@
-/* #lessonNavBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-} */
-
 .lesson-container {
   display: flex;
   flex-direction: column;

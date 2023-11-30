@@ -10,7 +10,6 @@ import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import LessonViewPage from "../LessonViewPage/LessonViewPage";
 import checkToken from "../../utilities/validateToken";
-/*global google*/
 
 export const UserContext = React.createContext(null);
 
@@ -22,7 +21,6 @@ export default function App() {
 
     return (
         <div className="App">
-            {/* <h1>Hello {name}</h1> */}
             <UserContext.Provider value={{ user: user, setUser: setUser }}>
                 <NavBar user={user} setUser={setUser} />
 

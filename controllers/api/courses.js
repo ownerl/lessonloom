@@ -1,6 +1,4 @@
 const { CourseModel } = require('../../models/course')
-// const jwt = require('jsonwebtoken');
-// const bcrypt = require('bcrypt');
 
 module.exports = {
   show,
@@ -38,11 +36,9 @@ async function addLesson(req, res) {
     new: true,
   })
   res.json(course)
-  //course.lessons.push()
 }
 
 async function all(req, res) {
-  // req.body contains filter parameters: sortBy and limitNumber which are passed from the jsx
   try {
     let courses = await CourseModel.find(req.body)
     res.json(courses)

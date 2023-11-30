@@ -63,7 +63,6 @@ async function courseSaved(req, res) {
 
 async function coursesArray(req, res) {
     if (req.body) {
-        console.log('req filter: ',req.body.filter)
         const existingUser = await User.findOne({
             googleId: req.body.user.googleId,
         }).populate([{

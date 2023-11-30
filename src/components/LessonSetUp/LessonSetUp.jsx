@@ -98,8 +98,6 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
                         )}
                     </div>
                     <div className="form-container">
-                        {/* <label>YouTube Link</label>
-                <p>https://www.youtube.com/watch?v=kkSf95iI984</p> */}
                         <input
                             className="url"
                             name="youTubeLink"
@@ -117,7 +115,6 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
                             {isPlaying ? "Pause" : "Play"}
                         </button>
                     </div>
-                    {/* <input type="text" className="url" placeholder="Insert Youtube URL"/> */}
                 </div>
             </div>
             <div className="bottom-half">
@@ -147,7 +144,6 @@ export default function LessonSetUp({ courseId, addLessonVisible, setAddLessonVi
                 />
             </div>
             <div className="button-row">
-                {/* <button className="delete">Delete</button> */}
                 <button type="submit" className="save" onClick={handleSubmit} >Save</button>
             </div>
             
