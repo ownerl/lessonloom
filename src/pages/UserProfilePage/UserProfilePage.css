@@ -1,97 +1,95 @@
 .user-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  height: 100%;
-  width: 1200px;
-  margin-bottom: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	height: 100%;
+	width: 1200px;
+	margin-bottom: 60px;
 }
 
 .user-info {
-  width: 100%;
-  margin-bottom: 40px;
-  text-align: center;
+	width: 100%;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
 .photo-container {
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-  background-color: #181818;
-  border-radius: 50%;
-  margin: 40px 0px;
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+	background-color: #181818;
+	border-radius: 50%;
+	margin: 40px 0px;
 }
 
 img.profile-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 2px solid #31363C;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 2px solid #31363c;
 }
 
 h3 {
-  margin: 0px 0px 20px;
+	margin: 0px 0px 20px;
 }
 
-
 .user-container ul {
-  width: 100%;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	width: 100%;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .content {
-  display: none;
+	display: none;
 }
 
 .show-content {
-  display: block;
-  width: 100%;
+	display: block;
+	width: 100%;
 }
 
-
 .profile-categories {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 900px;
-  margin-bottom: 40px;
-  margin-top: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	width: 900px;
+	margin-bottom: 40px;
+	margin-top: 20px;
 }
 
 .profile-cat {
-  border: 1px solid #000;
-  text-align: center;
-  padding: 10px 0px;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 0.7em;
+	border: 1px solid #000;
+	text-align: center;
+	padding: 10px 0px;
+	border-radius: 5px;
+	font-weight: 700;
+	font-size: 0.7em;
 }
 
 .profile-cat:hover {
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
 }
 
 .profile-course-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
-  width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 20px;
+	width: 100%;
 }
 
 .image-container {
-  width: 15px;
-  height: 15px;
-  padding: 0;
-  margin: 0;
+	width: 15px;
+	height: 15px;
+	padding: 0;
+	margin: 0;
 }
 
 .image-container img {
-  object-fit: contain;
-  height: 15px;
+	object-fit: contain;
+	height: 15px;
 }
