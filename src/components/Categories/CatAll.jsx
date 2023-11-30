@@ -47,14 +47,17 @@ export default function CatAll() {
                     <div className="bottom">
                         <div className="left">{courseObject.title}</div>
                         <div className="right">
-                            <span
+                        <div className="image-container">
+                            <img src={`${icons[courseObject.categories[0]]}`} alt="" />
+                        </div>
+                            {/* <span
                                 class="icon icon-heart"
                                 style={{
                                     backgroundImage: `url(${
                                         icons[courseObject.categories[0]]
                                     })`,
                                 }}
-                            ></span>
+                            ></span> */}
                         </div>
                     </div>
                 </div>

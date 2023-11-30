@@ -26,7 +26,7 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons, courseInf
                         <img
                             src={`https://img.youtube.com/vi/${thumbnail}/hqdefault.jpg`}
                             alt="YouTube thumbnail"
-                        />
+                            />
                     </div>
                     <div className="bottom">
                         <div className="left">{lessonInfo.title}</div>
