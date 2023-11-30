@@ -27,7 +27,7 @@ export default function Lesson({ lessonInfo, lessonIdx, courseLessons, courseInf
         return (
             <div className="lesson">
                 <Link to={`/lessons/${lessonInfo._id}`} state={{lessonInfo, lessonIdx, courseLessons, courseInfo}}>
-                    <div className="top">
+                    <div className="lessontop">
                         <img
                             src={`https://img.youtube.com/vi/${thumbnail}/hqdefault.jpg`}
                             alt="YouTube thumbnail"

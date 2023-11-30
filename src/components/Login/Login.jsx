@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import "./Login.css";
 import { loginUser } from "../../utilities/users-api";
@@ -6,11 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login({ showNav, setShowNav, user, setUser }) {
     const google = window.google;
-
+    const [buttonState, setButtonState] = useState();
     const navigate = useNavigate();
 
     function handleCallbackResponse(response) {
-        // google.js <--- callbackresponse will be there
         const idToken = response.credential;
         console.log("encoded jwt id token: ", response.credential);
         const userObject = jwtDecode(response.credential);
@@ -49,7 +48,7 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
                 shape: "pill",
                 logo_alignment: "center",
                 text: "signin_with",
-            } // customization attributes
+            }
         );
     }, [showNav]);
 
@@ -57,12 +56,12 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
         setUser(null);
         setShowNav(false);
         localStorage.clear();
-        // localStorage.removeItem('token');
         google.accounts.id.disableAutoSelect();
         navigate("/");
     }
 
-    return (
+    useEffect(() => {
+        setButtonState(
         <>
             { localStorage.getItem("token") ? 
                 <button id="signOutDiv" onClick={onSignOut}>
@@ -71,5 +70,10 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
             :
             <div className="googleSignIn" id="signInDiv"></div>}
         </>
+        )
+    }, user)
+
+    return (
+        {buttonState}
     );
 }

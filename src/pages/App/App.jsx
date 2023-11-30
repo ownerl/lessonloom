@@ -54,10 +54,6 @@ export default function App() {
                                     />
                                 }
                             />
-                            <Route
-                                path="/user/favorites"
-                                element={<UserFavoritesPage />}
-                            />
                         </>
                     )}
                 </Routes>

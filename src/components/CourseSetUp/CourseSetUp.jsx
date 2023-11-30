@@ -13,16 +13,15 @@ export default function CourseSetUp() {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const options = [
-        { value: "Photography", label: "Photography" },
-        { value: "JavaScript", label: "JavaScript" },
-        { value: "Nutrition", label: "Nutrition" },
-        { value: "Physics", label: "Physics" },
-        { value: "Painting", label: "Painting" },
-        { value: "AI", label: "AI" },
-        { value: "Business", label: "Business" },
-        { value: "Yoga", label: "Yoga" },
-        { value: "Cooking", label: "Cooking" },
-        { value: "Marketing", label: "Marketing" },
+        { value: "Programming", label: "Programming" },
+        { value: "Cooking & Nutrition", label: "Cooking & Nutrition" },
+        { value: "Math", label: "Math" },
+        { value: "Art", label: "Art" },
+        { value: "Business & Marketing", label: "Business & Marketing" },
+        { value: "Health & Fitness", label: "Health & Fitness" },
+        { value: "Language", label: "Language" },
+        { value: "DIY", label: "DIY" },
+        { value: "Other", label: "Other" },
     ];
 
     const [postImage, setPostImage] = useState("");
