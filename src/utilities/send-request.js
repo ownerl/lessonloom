@@ -10,7 +10,6 @@ export default async function sendRequest(url, method = "GET", payload = null) {
         options.headers["tokenid"] = token;
         options.headers["client_id"] = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     }
-    console.log('headers are here: ', options.headers)
     try {
         const res = await fetch(url, options);
         if (res.ok) return res.json();
