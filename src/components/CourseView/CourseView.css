@@ -134,7 +134,7 @@
     margin-bottom: 30px;
 }
 
-.back {
+/* .back {
     background-color: #000;
     padding: 10px 40px;
     color: #fff;
@@ -142,17 +142,26 @@
     font-weight: 700;
     margin-right: 20px;
     border-radius: 5px;
-}
+} */
 
-.next {
+/* .next {
     background-color: #0da000;
     padding: 10px 40px;
     color: #fff;
     border: none;
     font-weight: 700;
     border-radius: 5px;
-}
+} */
 
-.edit {
+/* .edit {
     width: 15px;
-}
+} */
+
+button.edit {
+    padding: 10px 40px;
+    background-color: #000;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+  }

@@ -128,9 +128,9 @@ export default function CoursePage() {
                         src={back}
                         alt="favourite button"
                     /> */}
-                    <button onClick={handleBack}>Back</button>
-                        <button onClick={handleEdit}>Close</button>
-                        <button onClick={handleSave}>Save</button>
+                    <button className="back" onClick={handleBack}>Back</button>
+                        <button className="close" onClick={handleEdit}>Close</button>
+                        <button className="save" onClick={handleSave}>Save</button>
                     </div>
                 </div>
             ) : (
@@ -154,8 +154,8 @@ export default function CoursePage() {
                         src={back}
                         alt="favourite button"
                     /> */}
-                    <button onClick={handleBack}>Back</button>
-                    <button onClick={handleEdit}>Edit</button>
+                    <button className="back" onClick={handleBack}>Back</button>
+                    <button className="edit" onClick={handleEdit}>Edit</button>
                     </div>
                 </div>
             )}

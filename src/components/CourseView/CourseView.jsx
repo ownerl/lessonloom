@@ -61,7 +61,7 @@ export default function CourseView() {
                     </div>
                     <div className="intro-title">
                     {/* {user && <img className="edit" onClick={handleEdit} src={edit} alt="favourite button" />} */}
-                    {user && <button onClick={handleEdit}>Edit</button>}
+                    {user && <button className="edit" onClick={handleEdit}>Edit</button>}
                     </div>
                     
                 </div>
