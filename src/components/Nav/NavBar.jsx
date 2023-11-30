@@ -7,12 +7,8 @@ import ll from '../../img/ll.svg'
 export default function NavBar({user, setUser}) {
     const [ showNav, setShowNav ] = useState(false)
     const [buttonState, setButtonState] = useState();
+    const [resetKey, setResetKey] = useState(0)
 
-    useEffect(() => {
-        setButtonState(
-            <Login showNav={showNav} setShowNav={setShowNav} use={user} setUser={setUser}/>
-        );
-    }, [localStorage.getItem("token")]);
     return (
         <nav>
                 <div className="lessonloom-logo">
@@ -24,11 +20,10 @@ export default function NavBar({user, setUser}) {
                     {user && (
                         <>
                             <li className='nav-item'><Link to="/courses/create">Create a Course</Link></li>
-                            {/* <li className='nav-item'><Link to="/user/favorites">Favourites</Link></li> */}
                             <li className='nav-item'><Link to="/user">My Profile</Link></li>
                         </>
                     )}
-                    <li className='nav-item'>{buttonState}</li>
+                    <li className='nav-item'><Login key={resetKey} resetKey={resetKey} setResetKey={setResetKey} showNav={showNav} setShowNav={setShowNav} use={user} setUser={setUser}/></li>
                 </ul>
         </nav>
     )

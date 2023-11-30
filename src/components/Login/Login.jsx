@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import { loginUser } from "../../utilities/users-api";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ showNav, setShowNav, setUser }) {
+export default function Login({ resetKey, setResetKey, showNav, setShowNav, setUser }) {
     const google = window.google;
     const navigate = useNavigate();
 
@@ -54,6 +54,7 @@ export default function Login({ showNav, setShowNav, setUser }) {
         setShowNav(false);
         localStorage.clear();
         google.accounts.id.disableAutoSelect();
+        setResetKey(resetKey + 1);
         navigate("/");
     }
 

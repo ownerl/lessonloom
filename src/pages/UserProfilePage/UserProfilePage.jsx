@@ -8,7 +8,17 @@ export default function UserProfilePage({ user }) {
     //// const [savedCourses, setSavedCourses] = useState([]);
     const [createdCourses, setCreatedCourses] = useState([]);
     const [showCourses, setShowCourses] = useState([]);
-
+    const icons = {
+        Programming: "/programming-icon.svg",
+        "Cooking & Nutrition": "/cooking-icon.svg",
+        Math: "/math-icon.svg",
+        Art: "/art-icon.svg",
+        Language: "/business-icon.svg",
+        "Business & Marketing": "/fitness-icon.svg",
+        "Health & Fitness": "/language-icon.svg",
+        DIY: "/img/diy-icon.svg",
+        Other: "/img/other-icon.svg",
+    };
     // Future Implementation of Saving Courses
     // // useEffect(() => {
     // //     const fetchUserCourses = async () => {
@@ -22,41 +32,50 @@ export default function UserProfilePage({ user }) {
     // // }, []);
 
     useEffect(() => {
-        const fetchUserCourses = async () => {
-            await coursesArray({ filter: "createdCourses" }, user).then(
-                (data) => {
-                    setCreatedCourses(data.createdCourses);
-                }
+        let courseList = [];
+        try {
+            coursesArray({ filter: "createdCourses" }, user).then((data) => {
+                data.createdCourses.forEach((courseInfo) => {
+                    courseList.push(courseInfo);
+                });
+                const test = courseList.map((courseObject) => (
+                    <div
+                        key={courseObject._id}
+                        className="course"
+                        onClick={() => {
+                            handleClick(courseObject._id);
+                        }}
+                    >
+                        <div className="top">
+                            <img
+                                src={courseObject.bannerImage}
+                                alt="course-banner"
+                            />
+                        </div>
+                        <div className="bottom">
+                            <div className="left">{courseObject.title}</div>
+                            <div className="right">
+                                <div className="image-container">
+                                    <img
+                                        src={`${
+                                            icons[courseObject.categories[0]]
+                                        }`}
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ));
+                setShowCourses(test);
+            });
+        } catch (err) {
+            console.log(
+                "Error occured while fetching user created courses",
+                err
             );
-        };
-        fetchUserCourses();
-    }, []);
-
-    useEffect(() => {
-        if (createdCourses.length > 1) {
-            const test = createdCourses.map((courseObject) => (
-                <div
-                    key={courseObject._id}
-                    className="course"
-                    onClick={() => {
-                        handleClick(courseObject._id);
-                    }}
-                >
-                    <div className="top">
-                        <img
-                            src={courseObject.bannerImage}
-                            alt="course-banner"
-                        />
-                    </div>
-                    <div className="bottom">
-                        <div className="left">{courseObject.title}</div>
-                        <div className="right"></div>
-                    </div>
-                </div>
-            ));
-            setShowCourses(test);
         }
-    }, [createdCourses]);
+    }, []);
 
     function handleClick(id) {
         const courseNav = { courseId: id };

@@ -27,13 +27,14 @@ export default function CoursePage() {
     });
 
     useEffect(() => {
-        const fetchCourse = async () => {
-            console.log("course info in useffect: ", location.state);
-            await course.getCourse(location.state._id).then((data) => {
-                setCourseInfo(data);
-            });
-        };
-        fetchCourse();
+        if (location.state) {
+            const fetchCourse = async () => {
+                await course.getCourse(location.state._id).then((data) => {
+                    setCourseInfo(data);
+                });
+            };
+            fetchCourse();
+        }
     }, [resetKey]);
 
     useEffect(() => {
@@ -58,10 +59,10 @@ export default function CoursePage() {
     }
 
     async function handleSave() {
-        const courseId = location.state._id
-        await course.updateCourse(courseId, editInfo)
-        setEdit(false)
-        navigate(0)
+            const courseId = location.state._id
+            await course.updateCourse(courseId, editInfo)
+            setEdit(false)
+            navigate(0)
     }
 
     return (

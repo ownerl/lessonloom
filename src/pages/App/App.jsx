@@ -29,7 +29,6 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Navigate to="/courses" />} />
                     <Route path="/courses" element={<CoursesIndexPage />} />
-                    <Route path="/courses/test" element={<CoursePage />} />
                     <Route path="/:courseId/view" element={<CourseView />} />
                     <Route path="/:courseId" element={<CoursePage />} />
                     <Route
