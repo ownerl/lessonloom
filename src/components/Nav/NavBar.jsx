@@ -2,12 +2,16 @@ import { Link } from 'react-router-dom';
 import Login from '../Login/Login';
 import { useState } from 'react';
 import "./NavBar.css";
+import ll from '../../img/ll.svg'
 
 export default function NavBar({user, setUser}) {
     const [ showNav, setShowNav ] = useState(false)
     return (
         <nav>
+                <div className="lessonloom-logo">
+                <img src={ll} alt="logo" />
                 <h2><Link to="/courses">LessonLoom</Link></h2>
+                </div>
                 <ul className='nav-links'>
                     <li className='nav-item'><Link to="/courses">All Courses</Link></li>
                     {user && (
