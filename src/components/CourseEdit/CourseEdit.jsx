@@ -1,15 +1,10 @@
 import './CourseEdit.css'
 import { useLocation } from 'react-router-dom';
 import photoUpload from '../../img/gallery 1.png'
-import { useEffect, useState } from 'react'
-import * as course from "../../utilities/courses-api";
 
 export default function CourseEdit() {
   const location = useLocation();
   const courseInfo = location.state;
-  console.log(' course info :  ', location.state)
-  // dont actually need the bottom line cuz useLocation with previous navigate brings course info returned from DB on creation here to this jsx
-  // const [courseInfo, setCourseInfo] = useState(course.getCourse(courseId))
 
   return (
     <form className="courseSetUp" action="">

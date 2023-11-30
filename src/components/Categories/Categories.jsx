@@ -1,17 +1,13 @@
 import './Categories.css'
-import * as course from '../../utilities/courses-api';
 import { useState, useEffect } from 'react';
-import heart from '../../img/Vector.svg'
 import { useNavigate } from "react-router-dom";
+import heart from '../../img/Vector.svg'
+import * as course from '../../utilities/courses-api';
 
 export default function CatOne({ category }) {
-
   const navigate = useNavigate();
-
   const [filter, setFilter] = useState({categories: {$in: [`${category}`]}})
-
   const [showCourses, setShowCourses] = useState()
-
 
   function handleClick(id) {
     const courseNav = {courseId: id}
@@ -26,7 +22,6 @@ export default function CatOne({ category }) {
       });
       const test = courseList.map((courseObject) => (
       <div key={courseObject._id} className='course' onClick={() => {handleClick(courseObject._id)}}>
-      {/* <div className="top">{courseObject.bannerImage}</div> */}
       <div className="top"><img src={courseObject.bannerImage} alt="course-banner" /></div>
       <div className="bottom">
       <div className="left">{courseObject.title}</div>
@@ -34,7 +29,6 @@ export default function CatOne({ category }) {
       </div>
       </div>
       ));
-  
       setShowCourses(test);
     });
   }, []);
