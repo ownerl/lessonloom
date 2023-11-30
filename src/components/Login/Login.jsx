@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { jwtDecode } from "jwt-decode";
 import "./Login.css";
+import { useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 import { loginUser } from "../../utilities/users-api";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ showNav, setShowNav, user, setUser }) {
+export default function Login({ showNav, setShowNav, setUser }) {
     const google = window.google;
     const navigate = useNavigate();
 

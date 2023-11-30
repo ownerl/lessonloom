@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./CoursesIndexPage.css";
+import { useState } from "react";
 import Categories from "../../components/Categories/Categories";
 import CatAll from "../../components/Categories/CatAll";
 

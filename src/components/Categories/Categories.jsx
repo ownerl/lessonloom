@@ -1,8 +1,8 @@
 import './Categories.css'
-import * as course from '../../utilities/courses-api';
 import { useState, useEffect } from 'react';
-import heart from '../../img/Vector.svg'
 import { useNavigate } from "react-router-dom";
+import heart from '../../img/Vector.svg'
+import * as course from '../../utilities/courses-api';
 
 export default function CatOne({ category }) {
 

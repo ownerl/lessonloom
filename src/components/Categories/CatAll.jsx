@@ -1,7 +1,7 @@
 import "./Categories.css";
-import * as course from "../../utilities/courses-api";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import * as course from "../../utilities/courses-api";
 
 export default function CatAll() {
     const navigate = useNavigate();

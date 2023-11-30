@@ -1,11 +1,10 @@
+import "./CoursePage.css";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./CoursePage.css";
 import Button from "../../components/Button/Button";
 import LessonSetUp from "../../components/LessonSetUp/LessonSetUp";
 import LessonList from "../../components/LessonList/LessonList";
 import * as course from "../../utilities/courses-api";
-import back from "../../img/gallery 1.png";
 
 export default function CoursePage() {
     const navigate = useNavigate();
@@ -78,20 +77,6 @@ export default function CoursePage() {
 
     return (
         <div className="coursepage-container">
-            {/* <div className="course-page-intro">
-                <div className="intro-title">
-                    <h1>{courseInfo ? courseInfo.title : ""}</h1>
-                    <h3>85%</h3>
-                </div>
-                <p>{courseInfo ? courseInfo.description : ""}</p>
-                <img src={courseInfo ? courseInfo.bannerImage : null} alt="" />
-                <img
-                    className="backImg"
-                    onClick={handleBack}
-                    src={back}
-                    alt="favourite button"
-                />
-            </div> */}
             {edit ? (
                 <div className="course-page-intro">
                     <div className="course-split">

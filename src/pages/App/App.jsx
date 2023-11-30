@@ -1,15 +1,14 @@
+import "./App.css"; 
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "../../components/Nav/NavBar";
 import CoursesIndexPage from "../CoursesIndex/CoursesIndexPage";
 import CoursePage from "../CoursePage/CoursePage";
 import CourseView from "../../components/CourseView/CourseView";
-// import Lesson from "../../components/Lesson/LessonCard";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
 import LessonViewPage from "../LessonViewPage/LessonViewPage";
-import "./App.css"; 
 import checkToken from "../../utilities/validateToken";
 /*global google*/
 

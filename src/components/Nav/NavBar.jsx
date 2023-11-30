@@ -1,7 +1,7 @@
+import "./NavBar.css";
 import { Link } from 'react-router-dom';
 import Login from '../Login/Login';
 import { useState, useEffect } from 'react';
-import "./NavBar.css";
 import ll from '../../img/ll.svg'
 
 export default function NavBar({user, setUser}) {
