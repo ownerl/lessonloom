@@ -8,7 +8,17 @@ export default function UserProfilePage({ user }) {
     //// const [savedCourses, setSavedCourses] = useState([]);
     const [createdCourses, setCreatedCourses] = useState([]);
     const [showCourses, setShowCourses] = useState([]);
-
+    const icons = {
+        Programming: "/programming-icon.svg",
+        "Cooking & Nutrition": "/cooking-icon.svg",
+        Math: "/math-icon.svg",
+        Art: "/art-icon.svg",
+        Language: "/business-icon.svg",
+        "Business & Marketing": "/fitness-icon.svg",
+        "Health & Fitness": "/language-icon.svg",
+        DIY: "/img/diy-icon.svg",
+        Other: "/img/other-icon.svg",
+    };
     // Future Implementation of Saving Courses
     // // useEffect(() => {
     // //     const fetchUserCourses = async () => {
@@ -22,19 +32,12 @@ export default function UserProfilePage({ user }) {
     // // }, []);
 
     useEffect(() => {
-        const fetchUserCourses = async () => {
-            await coursesArray({ filter: "createdCourses" }, user).then(
-                (data) => {
-                    setCreatedCourses(data.createdCourses);
-                }
-            );
-        };
-        fetchUserCourses();
-    }, []);
-
-    useEffect(() => {
-        if (createdCourses.length > 1) {
-            const test = createdCourses.map((courseObject) => (
+        let courseList = [];
+        coursesArray({ filter: "createdCourses" }, user).then((data) => {
+            data.createdCourses.forEach((courseInfo) => {
+                courseList.push(courseInfo);
+            });
+            const test = courseList.map((courseObject) => (
                 <div
                     key={courseObject._id}
                     className="course"
@@ -50,13 +53,17 @@ export default function UserProfilePage({ user }) {
                     </div>
                     <div className="bottom">
                         <div className="left">{courseObject.title}</div>
-                        <div className="right"></div>
+                        <div className="right">
+                        <div className="image-container">
+                            <img src={`${icons[courseObject.categories[0]]}`} alt="" />
+                        </div>
+                        </div>
                     </div>
                 </div>
             ));
-            setShowCourses(test);
-        }
-    }, [createdCourses]);
+            setShowCourses(test)
+        });
+    }, []);
 
     function handleClick(id) {
         const courseNav = { courseId: id };
