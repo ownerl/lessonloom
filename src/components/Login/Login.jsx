@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login({ showNav, setShowNav, user, setUser }) {
     const google = window.google;
-    const [buttonState, setButtonState] = useState();
     const navigate = useNavigate();
 
     function handleCallbackResponse(response) {
@@ -25,10 +24,11 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
             idToken,
             CLIENT_ID: process.env.REACT_APP_GOOGLE_CLIENT_ID,
         };
+        localStorage.setItem("token", response.credential);
+        console.log("dis da user data: ", userData);
         console.log(newUser.googleId);
         setUser(newUser);
         loginUser(userData);
-        localStorage.setItem("token", response.credential);
         setShowNav(true);
     }
 
@@ -39,17 +39,14 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
             callback: handleCallbackResponse,
         });
 
-        google.accounts.id.renderButton(
-            document.getElementById("signInDiv"),
-            {
-                type: "standard",
-                theme: "filled_blue",
-                size: "large",
-                shape: "pill",
-                logo_alignment: "center",
-                text: "signin_with",
-            }
-        );
+        google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+            type: "standard",
+            theme: "filled_blue",
+            size: "large",
+            shape: "pill",
+            logo_alignment: "center",
+            text: "signin_with",
+        });
     }, [showNav]);
 
     function onSignOut() {
@@ -60,20 +57,15 @@ export default function Login({ showNav, setShowNav, user, setUser }) {
         navigate("/");
     }
 
-    useEffect(() => {
-        setButtonState(
+    return (
         <>
-            { localStorage.getItem("token") ? 
+            {localStorage.getItem("token") ? (
                 <button id="signOutDiv" onClick={onSignOut}>
                     Sign Out
                 </button>
-            :
-            <div className="googleSignIn" id="signInDiv"></div>}
+            ) : (
+                <div className="googleSignIn" id="signInDiv"></div>
+            )}
         </>
-        )
-    }, user)
-
-    return (
-        {buttonState}
     );
 }

@@ -8,10 +8,10 @@ import CourseView from "../../components/CourseView/CourseView";
 // import Lesson from "../../components/Lesson/LessonCard";
 import CreateCoursePage from "../CreateCoursePage/CreateCoursePage";
 import UserProfilePage from "../UserProfilePage/UserProfilePage";
-import UserFavoritesPage from "../UserFavoritesPage/UserFavoritesPage";
 import LessonViewPage from "../LessonViewPage/LessonViewPage";
-import "./App.css"; /*global google*/
+import "./App.css"; 
 import checkToken from "../../utilities/validateToken";
+/*global google*/
 
 export const UserContext = React.createContext(null);
 
