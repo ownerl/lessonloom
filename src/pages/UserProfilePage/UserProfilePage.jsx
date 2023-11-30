@@ -13,9 +13,9 @@ export default function UserProfilePage({ user }) {
         "Cooking & Nutrition": "/cooking-icon.svg",
         Math: "/math-icon.svg",
         Art: "/art-icon.svg",
-        Language: "/business-icon.svg",
-        "Business & Marketing": "/fitness-icon.svg",
-        "Health & Fitness": "/language-icon.svg",
+        Language: "/language-icon.svg",
+        "Business & Marketing": "/business-icon.svg",
+        "Health & Fitness": "/fitness-icon.svg",
         DIY: "/img/diy-icon.svg",
         Other: "/img/other-icon.svg",
     };
